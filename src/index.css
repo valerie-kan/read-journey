@@ -7,6 +7,9 @@
   background-color: #141414;
 
   --color-bg: #1f1f1f;
+  --color-white: #f9f9f9;
+  --color-gray: #686868;
+  --color-input: #262626;
 }
 
 a {

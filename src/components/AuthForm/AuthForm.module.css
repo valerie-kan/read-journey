@@ -21,7 +21,6 @@
   font-size: 32px;
   line-height: 100%;
   letter-spacing: 0.02em;
-  color: #f9f9f9;
   margin-bottom: 20px;
 }
 
@@ -48,7 +47,7 @@
   font-size: 12px;
   line-height: 133%;
   letter-spacing: -0.02em;
-  color: #686868;
+  color: var(--color-gray);
   cursor: auto;
 }
 
@@ -62,12 +61,12 @@
   border-radius: 30px;
   padding: 12px;
   width: 131px;
-  background-color: #f9f9f9;
+  background-color: var(--color-white);
   font-weight: 700;
   font-size: 14px;
   line-height: 129%;
   letter-spacing: 0.02em;
-  color: #1f1f1f;
+  color: var(--color-bg);
   border: none;
   /* align-items: flex-end; */
 }
@@ -77,7 +76,7 @@
   font-size: 12px;
   line-height: 117%;
   letter-spacing: -0.02em;
-  color: #686868;
+  color: var(--color-gray);
   align-self: center;
 }
 
