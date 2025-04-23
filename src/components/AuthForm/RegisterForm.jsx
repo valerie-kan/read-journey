@@ -1,0 +1,46 @@
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+
+import css from "./AuthForm.module.css";
+
+import { RegisterSchema } from "../../utils/validationSchemas";
+
+import AuthForm from "../AuthForm/AuthForm";
+import Input from "../Input/Input";
+
+const RegisterForm = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(RegisterSchema) });
+
+  return (
+    <AuthForm
+      register={register}
+      errors={errors}
+      btnName="Register"
+      linkTo="/login"
+      linkName="Already have an account?"
+    >
+      <div className={css.inputBox}>
+        <label className={css.label} htmlFor="name">
+          Name:
+        </label>
+        <Input
+          id="name"
+          type="text"
+          register={register}
+          errors={errors}
+          placeholder="Ilona Ratushniak"
+          btnName="Register"
+          linkTo="/login"
+          linkName="Already have an account?"
+        />
+      </div>
+    </AuthForm>
+  );
+};
+
+export default RegisterForm;

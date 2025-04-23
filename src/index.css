@@ -5,6 +5,8 @@
   color-scheme: dark;
   color: #f9f9f9;
   background-color: #141414;
+
+  --color-bg: #1f1f1f;
 }
 
 a {
