@@ -1,10 +1,16 @@
+.authWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
 .formWrapper {
   background-color: var(--color-bg);
   padding: 20px;
   border-radius: 30px;
-  width: 335px;
-  /* width: 295px; */
-  height: 371px;
+  max-width: 335px;
+  height: 411px;
   display: flex;
   flex-direction: column;
 }
@@ -17,7 +23,7 @@
 }
 
 .formTitle {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 32px;
   line-height: 100%;
   letter-spacing: 0.02em;
@@ -43,7 +49,6 @@
   position: absolute;
   top: 14px;
   left: 14px;
-  font-weight: 500;
   font-size: 12px;
   line-height: 133%;
   letter-spacing: -0.02em;
@@ -58,17 +63,20 @@
 }
 
 .submitBtn {
-  border-radius: 30px;
-  padding: 12px;
-  width: 131px;
+  padding: 12px 29px;
   background-color: var(--color-white);
   font-weight: 700;
   font-size: 14px;
   line-height: 129%;
   letter-spacing: 0.02em;
   color: var(--color-bg);
-  border: none;
-  /* align-items: flex-end; */
+  border: 1px solid transparent;
+}
+
+.submitBtn:hover {
+  border: 1px solid rgba(249, 249, 249, 0.2);
+  background-color: #141414;
+  color: var(--color-white);
 }
 
 .link {
@@ -78,17 +86,43 @@
   letter-spacing: -0.02em;
   color: var(--color-gray);
   align-self: center;
+  transition: color 250ms;
+}
+
+.link:hover {
+  color: var(--color-white);
+}
+
+.imgWrapper {
+  background-color: var(--color-bg);
+  border-radius: 30px;
+  max-width: 295px;
+  padding: 20px 40px 0;
+  overflow: hidden;
+}
+
+.phoneImg {
+  content: url(../../assets/images/phone-mobile@1x.png);
+  max-width: 100%;
+  height: 100%;
 }
 
 @media screen and (min-resolution: 192dpi) {
   .logo {
     content: url(../../assets/images/logo-mobile@2x.png);
   }
+
+  .phoneImg {
+    content: url(../../assets/images/phone-mobile@2x.png);
+  }
 }
 
 @media screen and (min-width: 768px) {
   .formWrapper {
-    padding: 40px 64px;
+    padding-block: 40px;
+    padding-inline: 64px 168px;
+    max-width: 472px;
+    height: 960px;
   }
 
   .logo {
@@ -100,11 +134,85 @@
   .formTitle {
     font-size: 64px;
     line-height: 94%;
+    margin-bottom: 40px;
+  }
+
+  .label {
+    top: 17px;
+    font-size: 14px;
+    line-height: 129%;
+  }
+
+  .inputWrapper {
+    gap: 14px;
+  }
+
+  .btnWrapper {
+    gap: 20px;
+  }
+
+  .btnWrapper {
+    margin-bottom: 174px;
+  }
+
+  .submitBtn {
+    padding: 16px 54px;
+    font-size: 20px;
+    line-height: 100%;
+  }
+
+  .link {
+    font-size: 14px;
+    line-height: 129%;
+  }
+
+  .imgWrapper {
+    display: none;
+  }
+
+  .phoneImg {
+    content: url(../../assets/images/phone-desktop@1x.png);
   }
 }
 
 @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .logo {
     content: url(../../assets/images/logo-desktop@2x.png);
+  }
+
+  .phoneImg {
+    content: url(../../assets/images/phone-desktop@2x.png);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .authWrapper {
+    flex-direction: row;
+    gap: 16px;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .formWrapper {
+    padding-inline: 64px;
+    height: 656px;
+  }
+
+  .logo {
+    margin-bottom: 107px;
+  }
+
+  .btnWrapper {
+    margin-bottom: 0;
+  }
+
+  .imgWrapper {
+    display: block;
+    padding: 80px 98px 0;
+    max-width: none;
+  }
+
+  .phoneImg {
+    width: 405px;
   }
 }

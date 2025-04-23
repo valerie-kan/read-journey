@@ -1,9 +1,8 @@
 :root {
   font-family: "Poppins", sans-serif;
-  letter-spacing: -0.02em;
 
   color-scheme: dark;
-  color: #f9f9f9;
+  color: var(--color-white);
   background-color: #141414;
 
   --color-bg: #1f1f1f;
@@ -12,18 +11,8 @@
   --color-input: #262626;
 }
 
-a {
-  /* font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit; */
-}
-
 body {
-  /* margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh; */
+  margin: 0 auto;
 }
 
 h1,
@@ -44,9 +33,9 @@ li {
 button {
   border-radius: 30px;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 250ms, color 250ms, border 250ms;
 }
 
-/* button:hover {
-  border-color: #646cff;
-} */
+img {
+  display: block;
+}

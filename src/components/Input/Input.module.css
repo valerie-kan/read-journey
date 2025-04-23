@@ -1,32 +1,32 @@
 .input {
   border-radius: 12px;
+  box-sizing: border-box;
   padding: 14px;
-  width: 272px;
-  /* width: 232px; */
+  width: 100%;
   background-color: var(--color-input);
-  height: 16px;
   padding-left: 49px;
-  font-weight: 500;
   font-size: 12px;
   line-height: 133%;
   letter-spacing: -0.02em;
-  border: none;
+  border: 1px solid transparent;
   outline: none;
+  transition: border-color 250ms;
 }
 
 .pwdInput {
-  width: 243px;
-  /* width: 203px; */
   padding-left: 78px;
 }
 
 .nameInput {
-  width: 262px;
   padding-left: 59px;
 }
 
 .input::placeholder {
   color: var(--color-white);
+}
+
+.input:hover {
+  border-color: rgba(249, 249, 249, 0.1);
 }
 
 .iconEye {
@@ -36,4 +36,26 @@
   top: 14px;
   right: 14px;
   cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .input {
+    padding-block: 16px;
+    font-size: 14px;
+    line-height: 129%;
+    padding-left: 53px;
+  }
+
+  .nameInput {
+    padding-left: 65px;
+  }
+
+  .pwdInput {
+    padding-left: 88px;
+  }
+
+  .iconEye {
+    top: 16px;
+    right: 16px;
+  }
 }

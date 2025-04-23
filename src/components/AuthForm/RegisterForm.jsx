@@ -20,7 +20,7 @@ const RegisterForm = () => {
     <AuthForm
       register={register}
       errors={errors}
-      btnName="Register"
+      btnName="Registration"
       linkTo="/login"
       linkName="Already have an account?"
     >
@@ -34,9 +34,6 @@ const RegisterForm = () => {
           register={register}
           errors={errors}
           placeholder="Ilona Ratushniak"
-          btnName="Register"
-          linkTo="/login"
-          linkName="Already have an account?"
         />
       </div>
     </AuthForm>
