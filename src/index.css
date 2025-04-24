@@ -17,10 +17,10 @@
   --logo-desktop-2: url(./assets/images/logo-desktop@2x.png);
 
   /* PHONE VARIABLES */
-  --phone-mobile: url(./assets/images/logo-mobile@1x.png);
-  --phone-mobile-2: url(./assets/images/logo-mobile@2x.png);
-  --phone-desktop: url(./assets/images/logo-desktop@1x.png);
-  --phone-desktop-2: url(./assets/images/logo-desktop@2x.png);
+  --phone-mobile: url(./assets/images/phone-mobile@1x.png);
+  --phone-mobile-2: url(./assets/images/phone-mobile@2x.png);
+  --phone-desktop: url(./assets/images/phone-desktop@1x.png);
+  --phone-desktop-2: url(./assets/images/phone-desktop@2x.png);
 }
 
 body {

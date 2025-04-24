@@ -13,6 +13,12 @@
   text-decoration: none;
   color: var(--color-gray);
   position: relative;
+  transition: transform 250ms;
+}
+
+.link:hover,
+.link:focus {
+  transform: scale(1.1);
 }
 
 .active {
@@ -36,11 +42,17 @@
     line-height: 112%;
     flex-direction: row;
     gap: 32px;
-    margin-inline: 0;
+    margin-left: 0;
   }
 
   .active::after {
     bottom: -8px;
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .userNav {
+    gap: 40px;
   }
 }

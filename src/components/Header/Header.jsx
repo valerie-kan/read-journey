@@ -44,12 +44,17 @@ const Header = () => {
 
   return (
     <div className={css.headerWrapper}>
-      <img className={css.logo} src="var(--logo-desktop)" alt="Logo" />
-      <div className={css.userNav}>
-        <UserNav />
+      <div className={css.logoAndNav}>
+        <img className={css.logo} src="var(--logo-desktop)" alt="Logo" />
+        <div className={css.userNav}>
+          <UserNav />
+        </div>
       </div>
-      <div className={css.circleAndMenu}>
-        <div className={css.userBar}>{getInitial()}</div>
+      <div className={css.userCorner}>
+        <div className={css.userBar}>
+          <span className={css.userInitial}>{getInitial()}</span>
+          <span className={css.userName}>{name}</span>
+        </div>
         <svg
           className={css.burgerIcon}
           width={28}

@@ -17,13 +17,13 @@
   display: none;
 }
 
-.circleAndMenu {
+.userCorner {
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-.userBar {
+.userInitial {
   width: 35px;
   height: 35px;
   border-radius: 100px;
@@ -35,6 +35,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.userName {
+  display: none;
 }
 
 .submitBtn {
@@ -51,17 +55,24 @@
   .headerWrapper {
     max-width: 672px;
     padding: 16px;
+    /* justify-content: flex-end; */
+  }
+
+  .logoAndNav {
+    display: flex;
+    justify-content: space-between;
+    width: 408px;
   }
 
   .userNav {
     display: flex;
   }
 
-  .circleAndMenu {
+  .userCorner {
     gap: 16px;
   }
 
-  .userBar {
+  .userInitial {
     width: 40px;
     height: 40px;
   }
@@ -89,8 +100,30 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .headerWrapper {
+    max-width: 1184px;
+  }
+
   .logo {
+    width: 182px;
     content: var(--logo-desktop);
+  }
+
+  .logoAndNav {
+    width: 667px;
+  }
+
+  .userBar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .userName {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 112%;
   }
 }
 

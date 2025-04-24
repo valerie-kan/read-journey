@@ -22,11 +22,7 @@ const AuthForm = ({
   return (
     <Container className={css.authWrapper}>
       <form className={css.formWrapper} onSubmit={handleSubmit}>
-        <img
-          className={css.logo}
-          src="../../assets/images/logo-desktop.png"
-          alt="Logo"
-        />
+        <img className={css.logo} src="var(--logo-desktop)" alt="Logo" />
         <h1 className={css.formTitle}>
           Expand your mind, reading <span className={css.bookSpan}>a book</span>
         </h1>
@@ -70,7 +66,7 @@ const AuthForm = ({
       <div className={css.imgWrapper}>
         <img
           className={css.phoneImg}
-          src="../../assets/images/phone-desktop@1x.png"
+          src="var(--phone-desktop)"
           alt="Phone with books image"
         />
       </div>
