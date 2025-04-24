@@ -9,6 +9,18 @@
   --color-white: #f9f9f9;
   --color-gray: #686868;
   --color-input: #262626;
+
+  /* LOGO VARIABLES */
+  --logo-mobile: url(./assets/images/logo-mobile@1x.png);
+  --logo-mobile-2: url(./assets/images/logo-mobile@2x.png);
+  --logo-desktop: url(./assets/images/logo-desktop@1x.png);
+  --logo-desktop-2: url(./assets/images/logo-desktop@2x.png);
+
+  /* PHONE VARIABLES */
+  --phone-mobile: url(./assets/images/logo-mobile@1x.png);
+  --phone-mobile-2: url(./assets/images/logo-mobile@2x.png);
+  --phone-desktop: url(./assets/images/logo-desktop@1x.png);
+  --phone-desktop-2: url(./assets/images/logo-desktop@2x.png);
 }
 
 body {

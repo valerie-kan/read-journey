@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { login, registerUser } from "./operations";
+import { login, logout, registerUser, setToken } from "./operations";
 
 const initialState = {
   userName: "",
@@ -26,11 +26,14 @@ const authSlice = createSlice({
         state.userName = action.payload.name;
         state.userEmail = action.payload.email;
         state.token = action.payload.token;
+
+        setToken(action.payload.token);
+        localStorage.setItem("token", action.payload.token);
       })
       .addCase(registerUser.rejected, (state, action) => {
         state.isLoading = false;
-        state.isLoggedIn = false;
-        state.error = action.payload.message;
+        // state.isLoggedIn = false;
+        state.error = action.payload;
       })
       .addCase(login.pending, (state) => {
         state.isLoading = true;
@@ -42,6 +45,27 @@ const authSlice = createSlice({
         state.userName = action.payload.name;
         state.userEmail = action.payload.email;
         state.token = action.payload.token;
+
+        setToken(action.payload.token);
+        localStorage.setItem("token", action.payload.token);
+      })
+      .addCase(login.rejected, (state, action) => {
+        state.isLoading = false;
+        // state.isLoggedIn = false;
+        state.error = action.payload;
+      })
+      .addCase(logout.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(logout.fulfilled, () => {
+        localStorage.removeItem("token");
+        return initialState;
+      })
+      .addCase(logout.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isLoggedIn = false;
+        state.error = action.payload;
       });
   },
 });

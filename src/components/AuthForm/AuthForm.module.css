@@ -18,7 +18,7 @@
 .logo {
   max-width: 42px;
   height: 17px;
-  content: url(../../assets/images/logo-mobile@1x.png);
+  content: var(--logo-mobile);
   margin-bottom: 40px;
 }
 
@@ -102,18 +102,18 @@
 }
 
 .phoneImg {
-  content: url(../../assets/images/phone-mobile@1x.png);
+  content: var(--phone-mobile);
   max-width: 100%;
   height: 100%;
 }
 
 @media screen and (min-resolution: 192dpi) {
   .logo {
-    content: url(../../assets/images/logo-mobile@2x.png);
+    content: var(--logo-mobile-2);
   }
 
   .phoneImg {
-    content: url(../../assets/images/phone-mobile@2x.png);
+    content: var(--phone-mobile-2);
   }
 }
 
@@ -127,7 +127,7 @@
 
   .logo {
     max-width: 182px;
-    content: url(../../assets/images/logo-desktop@1x.png);
+    content: var(--logo-desktop);
     margin-bottom: 157px;
   }
 
@@ -171,17 +171,17 @@
   }
 
   .phoneImg {
-    content: url(../../assets/images/phone-desktop@1x.png);
+    content: var(--phone-desktop);
   }
 }
 
 @media screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .logo {
-    content: url(../../assets/images/logo-desktop@2x.png);
+    content: var(--logo-desktop-2);
   }
 
   .phoneImg {
-    content: url(../../assets/images/phone-desktop@2x.png);
+    content: var(--phone-desktop-2);
   }
 }
 

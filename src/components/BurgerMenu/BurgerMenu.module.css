@@ -1,0 +1,45 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 20, 0.6);
+  z-index: 9;
+}
+
+.modal {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background-color: var(--color-input);
+  padding-inline: 54px;
+  padding-block: 280px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 34px;
+  right: 40px;
+  cursor: pointer;
+}
+
+.submitBtn {
+  border: 1px solid rgba(249, 249, 249, 0.2);
+  padding: 10px;
+  background-color: var(--color-bg);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: 0.02em;
+}
+
+.submitBtn:hover {
+  background-color: var(--color-white);
+  color: var(--color-bg);
+}
