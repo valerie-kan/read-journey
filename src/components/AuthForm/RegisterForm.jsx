@@ -13,13 +13,18 @@ const RegisterForm = () => {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, touchedFields },
+    watch,
   } = useForm({ resolver: yupResolver(RegisterSchema) });
 
   return (
     <AuthForm
       register={register}
+      handleSubmit={handleSubmit}
+      reset={reset}
       errors={errors}
+      touchedFields={touchedFields}
+      watch={watch}
       btnName="Registration"
       linkTo="/login"
       linkName="Already have an account?"

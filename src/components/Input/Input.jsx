@@ -5,7 +5,7 @@ import css from "./Input.module.css";
 
 import sprite from "../../assets/icons/symbol-defs.svg";
 
-const Input = ({ id, type, placeholder, register, errors }) => {
+const Input = ({ id, type, placeholder, register, errors, isValid }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const isPwdType = type === "password";
@@ -20,21 +20,29 @@ const Input = ({ id, type, placeholder, register, errors }) => {
         className={clsx(
           css.input,
           isPwdType && css.pwdInput,
-          id === "name" && css.nameInput
+          id === "name" && css.nameInput,
+          errors[id] && css.errInput,
+          isValid && css.sucInput
         )}
         id={id}
         type={!isPwdType ? type : showPassword ? "text" : "password"}
         placeholder={placeholder}
         {...register(id)}
       />
-      {isPwdType && (
+      {errors[id] && (
+        <svg className={css.errIcon}>
+          <use href={`${sprite}#icon-error`} />
+        </svg>
+      )}
+      {isPwdType && !errors[id] && (
         <svg className={css.iconEye} onClick={togglePasswordVisibility}>
           <use
             href={`${sprite}#${showPassword ? "icon-eye" : "icon-eye-off"}`}
           />
         </svg>
       )}
-      {errors[id] && <p className={css.errMessage}>{errors[id].message}</p>}
+      {errors?.[id] && <p className={css.errMessage}>{errors[id].message}</p>}
+      {isValid && <p className={css.sucMessage}>Password is secure</p>}
     </>
   );
 };

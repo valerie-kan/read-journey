@@ -7,14 +7,26 @@ import Container from "../Container/Container";
 const AuthForm = ({
   register,
   errors,
+  touchedFields,
+  watch,
   children,
   btnName,
   linkTo,
   linkName,
+  handleSubmit,
 }) => {
+  const onSubmit = () => {
+    console.log("Submited");
+  };
+
+  const pwdValue = watch("password");
+  console.log(pwdValue);
+  const isPwdValid =
+    touchedFields.password && !errors.password && pwdValue?.length >= 7;
+
   return (
     <Container className={css.authWrapper}>
-      <div className={css.formWrapper}>
+      <form className={css.formWrapper} onSubmit={handleSubmit(onSubmit)}>
         <img
           className={css.logo}
           src="../../assets/images/logo-desktop.png"
@@ -44,6 +56,7 @@ const AuthForm = ({
             <Input
               id="password"
               type="password"
+              isValid={isPwdValid}
               register={register}
               errors={errors}
               placeholder="Yourpasswordhere"
@@ -58,7 +71,7 @@ const AuthForm = ({
             {linkName}
           </Link>
         </div>
-      </div>
+      </form>
       <div className={css.imgWrapper}>
         <img
           className={css.phoneImg}

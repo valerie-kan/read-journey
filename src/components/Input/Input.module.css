@@ -38,6 +38,38 @@
   cursor: pointer;
 }
 
+.errMessage {
+  font-size: 9px;
+  color: #e90516;
+  margin-top: 1px;
+  margin-left: 8px;
+}
+
+.errInput,
+.errInput:hover {
+  border-color: #e90516;
+}
+
+.errIcon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 13px;
+  right: 16px;
+}
+
+.sucMessage {
+  font-size: 9px;
+  color: #30b94d;
+  margin-top: 1px;
+  margin-left: 8px;
+}
+
+.sucInput,
+.sucInput:hover {
+  border-color: #30b94d;
+}
+
 @media screen and (min-width: 768px) {
   .input {
     padding-block: 16px;
@@ -57,5 +89,17 @@
   .iconEye {
     top: 16px;
     right: 16px;
+  }
+
+  .errMessage,
+  .sucMessage {
+    font-size: 12px;
+  }
+
+  .errIcon {
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    right: 18px;
   }
 }
