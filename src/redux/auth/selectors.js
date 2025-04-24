@@ -1,11 +1,11 @@
-export const selectUserName = (state) => state.auth.auth.userName;
+export const selectUserName = (state) => state.auth.userName;
 
-export const selectUserEmail = (state) => state.auth.auth.userEmail;
+export const selectUserEmail = (state) => state.auth.userEmail;
 
-export const selectIsLoggedIn = (state) => state.auth.auth.isLoggedIn;
+export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 
-export const selectIsLoading = (state) => state.auth.auth.isLoading;
+export const selectIsLoading = (state) => state.auth.isLoading;
 
-export const selectError = (state) => state.auth.auth.error;
+export const selectError = (state) => state.auth.error;
 
-export const selectToken = (state) => state.auth.auth.token;
+export const selectToken = (state) => state.auth.token;
