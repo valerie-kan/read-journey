@@ -11,6 +11,7 @@
   border: 1px solid transparent;
   outline: none;
   transition: border-color 250ms;
+  cursor: pointer;
 }
 
 .pwdInput {

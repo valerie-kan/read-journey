@@ -15,18 +15,13 @@ const AuthForm = ({
   linkName,
   handleSubmit,
 }) => {
-  const onSubmit = () => {
-    console.log("Submited");
-  };
-
   const pwdValue = watch("password");
-  console.log(pwdValue);
   const isPwdValid =
     touchedFields.password && !errors.password && pwdValue?.length >= 7;
 
   return (
     <Container className={css.authWrapper}>
-      <form className={css.formWrapper} onSubmit={handleSubmit(onSubmit)}>
+      <form className={css.formWrapper} onSubmit={handleSubmit}>
         <img
           className={css.logo}
           src="../../assets/images/logo-desktop.png"
