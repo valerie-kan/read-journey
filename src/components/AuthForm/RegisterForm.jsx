@@ -5,12 +5,13 @@ import { useDispatch } from "react-redux";
 import css from "./AuthForm.module.css";
 
 import { RegisterSchema } from "../../utils/validationSchemas";
+import { SuccessToast } from "../../utils/successToast";
+import { ErrorToast } from "../../utils/errorToast";
+
 import { registerUser } from "../../redux/auth/operations";
 
 import AuthForm from "../AuthForm/AuthForm";
 import Input from "../Input/Input";
-import { SuccessToast } from "../../utils/successToast";
-import { ErrorToast } from "../../utils/errorToast";
 
 const RegisterForm = () => {
   const {
