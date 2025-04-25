@@ -67,7 +67,9 @@ const Header = () => {
           Log out
         </button>
       </div>
-      {isSideOpen && <BurgerMenu onCloseClick={onCloseClick} />}
+      {isSideOpen && (
+        <BurgerMenu onCloseClick={onCloseClick} onLogoutClick={onLogoutClick} />
+      )}
     </div>
   );
 };
