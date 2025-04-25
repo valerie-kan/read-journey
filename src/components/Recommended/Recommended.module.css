@@ -1,0 +1,33 @@
+.recomWrapper {
+  border-radius: 30px;
+  background-color: var(--color-bg);
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.recomTtl {
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  margin-bottom: 34px;
+}
+
+@media screen and (min-width: 768px) {
+  .recomWrapper {
+    padding: 40px;
+  }
+
+  .recomTtl {
+    font-size: 28px;
+    line-height: 114%;
+    margin-bottom: 28px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .recomWrapper {
+    padding-inline: 40px;
+    padding-block: 40px 28px;
+    width: 847px;
+  }
+}
