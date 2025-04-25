@@ -3,34 +3,31 @@ import { Toaster } from "react-hot-toast";
 
 import RestrictedRoute from "./components/RestrictedRoute";
 import PrivateRoute from "./components/PrivateRoute";
-import MainLayout from "./components/MainLayout/MainLayout";
+import MainLayout from "./components/MainLayout";
 
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import RecommendedPage from "./pages/RecommendedPage/RecommendedPage";
 
 function App() {
   return (
     <>
       <Toaster />
       <Routes>
-        {/* <Route> */}
         <Route
-          path="login"
-          element={<RestrictedRoute path="/login" component={<LoginPage />} />}
+          path="/login"
+          element={<RestrictedRoute component={<LoginPage />} />}
         />
         <Route
-          path="register"
-          element={
-            <RestrictedRoute path="/register" component={<RegisterPage />} />
-          }
+          path="/register"
+          element={<RestrictedRoute component={<RegisterPage />} />}
         />
-        <Route
-          path="recomended"
-          element={
-            <PrivateRoute path="/recomended" component={<MainLayout />} />
-          }
-        />
-        {/* </Route> */}
+        <Route element={<MainLayout />}>
+          <Route
+            path="/recommended"
+            element={<PrivateRoute component={<RecommendedPage />} />}
+          />
+        </Route>
       </Routes>
     </>
   );

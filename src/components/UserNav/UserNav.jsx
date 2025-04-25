@@ -8,7 +8,7 @@ const UserNav = () => {
 
   return (
     <div className={css.userNav}>
-      <NavLink className={linkCls} to="/recomended">
+      <NavLink className={linkCls} to="/recommended">
         Home
       </NavLink>
       <NavLink className={linkCls} to="/library">

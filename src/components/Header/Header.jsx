@@ -21,7 +21,7 @@ const Header = () => {
   const [isSideOpen, setIsSideOpen] = useState(false);
 
   const getInitial = () => {
-    return name[0].toUpperCase();
+    return name ? name[0].toUpperCase() : "N";
   };
 
   const onMenuClick = () => {
