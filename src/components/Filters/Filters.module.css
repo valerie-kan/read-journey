@@ -1,0 +1,67 @@
+.formTtl {
+  margin-left: 14px;
+  margin-bottom: 8px;
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+}
+
+.inputBox {
+  position: relative;
+}
+
+.bookLabel,
+.authorLabel {
+  position: absolute;
+  top: 15px;
+  left: 14px;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  color: var(--color-gray);
+  cursor: auto;
+}
+
+.inputsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.submitBtn {
+  padding: 10px 20px;
+  background-color: var(--color-bg);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: 0.02em;
+  color: var(--color-white);
+  border: 1px solid rgba(249, 249, 249, 0.2);
+}
+
+.submitBtn:hover {
+  border-color: transparent;
+  background-color: var(--color-white);
+  color: #141414;
+}
+
+@media screen and (min-width: 768px) {
+  .formTtl {
+    font-size: 14px;
+    line-height: 129%;
+  }
+
+  .bookLabel,
+  .authorLabel {
+    font-size: 14px;
+    line-height: 129%;
+    top: 17px;
+  }
+
+  .submitBtn {
+    padding: 12px 28px;
+    font-size: 16px;
+    line-height: 112%;
+  }
+}

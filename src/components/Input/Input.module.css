@@ -14,12 +14,20 @@
   cursor: pointer;
 }
 
-.pwdInput {
+.passwordInput {
   padding-left: 78px;
 }
 
 .nameInput {
   padding-left: 59px;
+}
+
+.bookInput {
+  padding-left: 77px;
+}
+
+.authorInput {
+  padding-left: 85px;
 }
 
 .input::placeholder {
@@ -83,8 +91,18 @@
     padding-left: 65px;
   }
 
-  .pwdInput {
+  .passwordInput {
     padding-left: 88px;
+  }
+
+  .bookInput {
+    padding-left: 86px;
+    width: 295px;
+  }
+
+  .authorInput {
+    padding-left: 95px;
+    width: 295px;
   }
 
   .iconEye {
@@ -102,5 +120,12 @@
     height: 20px;
     top: 15px;
     right: 18px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .bookInput,
+  .authorInput {
+    width: 100%;
   }
 }

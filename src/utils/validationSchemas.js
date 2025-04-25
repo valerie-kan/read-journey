@@ -22,3 +22,8 @@ export const RegisterSchema = Yup.object({
     .min(7, "Password must be at least 7 symbols")
     .max(20, "Password must be at most 20 symbols"),
 });
+
+// export const FilterSchema = Yup.object({
+//   book: Yup.string(),
+//   author: Yup.string(),
+// });

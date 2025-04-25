@@ -19,8 +19,7 @@ const Input = ({ id, type, placeholder, register, errors, isValid }) => {
       <input
         className={clsx(
           css.input,
-          isPwdType && css.pwdInput,
-          id === "name" && css.nameInput,
+          id && css[`${id}Input`],
           errors[id] && css.errInput,
           isValid && css.sucInput
         )}
