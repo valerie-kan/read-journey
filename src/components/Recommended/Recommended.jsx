@@ -3,17 +3,19 @@ import { useEffect, useState } from "react";
 
 import css from "./Recommended.module.css";
 
-import { selectBooks, selectPage } from "../../redux/books/selectors";
+import { selectBooks, selectTotalPages } from "../../redux/books/selectors";
 import { getBooks } from "../../redux/books/operations";
 
 import BooksListItem from "../BooksListItem/BooksListItem";
 import Pagination from "../Pagination/Pagination";
 
 const Recommended = () => {
-  const books = useSelector(selectBooks);
-  const page = useSelector(selectPage);
   const dispatch = useDispatch();
+  const books = useSelector(selectBooks);
+  const totalPages = useSelector(selectTotalPages);
+
   const [limit, setLimit] = useState(getLimit());
+  const [page, setPage] = useState(1);
 
   function getLimit() {
     const width = window.innerWidth;
@@ -50,7 +52,7 @@ const Recommended = () => {
     <div className={css.recomWrapper}>
       <div className={css.ttlWrapper}>
         <h2 className={css.recomTtl}>Recommended</h2>
-        <Pagination page={page} />
+        <Pagination page={page} setPage={setPage} totalPages={totalPages} />
       </div>
       <ul className={css.filmsWrapper}>
         {books.map((book) => (

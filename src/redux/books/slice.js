@@ -4,7 +4,6 @@ import { getBooks } from "./operations";
 
 const initialState = {
   books: [],
-  page: 1,
   totalPages: null,
   isLoading: false,
   error: null,
@@ -20,10 +19,9 @@ const bookSlice = createSlice({
         state.error = null;
       })
       .addCase(getBooks.fulfilled, (state, action) => {
-        console.log(action.payload);
+        // console.log(action.payload);
         state.isLoading = false;
         state.books = action.payload.results;
-        state.page = action.payload.page;
         state.totalPages = action.payload.totalPages;
       })
       .addCase(getBooks.rejected, (state, action) => {

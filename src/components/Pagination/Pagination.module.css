@@ -12,11 +12,29 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: transform 250ms;
+}
+
+.arrowCont:hover {
+  transform: scale(1.2);
 }
 
 .arrowIcon {
   width: 16px;
   height: 16px;
+}
+
+.disabled {
+  cursor: auto;
+  opacity: 100%;
+}
+
+.disabled:hover {
+  transform: none;
+}
+
+.disabled svg {
+  opacity: 0.2;
 }
 
 @media screen and (min-width: 768px) {

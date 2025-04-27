@@ -1,2 +1,2 @@
 export const selectBooks = (state) => state.books.books;
-export const selectPage = (state) => state.books.page;
+export const selectTotalPages = (state) => state.books.totalPages;
