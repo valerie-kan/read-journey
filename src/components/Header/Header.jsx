@@ -19,6 +19,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const name = useSelector(selectUserName);
   const [isSideOpen, setIsSideOpen] = useState(false);
+  const [isSideClosing, setIsSideClosing] = useState(false);
 
   const getInitial = () => {
     return name ? name[0].toUpperCase() : "N";
@@ -29,7 +30,14 @@ const Header = () => {
   };
 
   const onCloseClick = () => {
-    setIsSideOpen(false);
+    setIsSideClosing(true);
+  };
+
+  const handleAnimationEnd = () => {
+    if (isSideClosing) {
+      setIsSideOpen(false);
+      setIsSideClosing(false);
+    }
   };
 
   const onLogoutClick = async () => {
@@ -68,7 +76,14 @@ const Header = () => {
         </button>
       </div>
       {isSideOpen && (
-        <BurgerMenu onCloseClick={onCloseClick} onLogoutClick={onLogoutClick} />
+        <BurgerMenu
+          onCloseClick={onCloseClick}
+          onLogoutClick={onLogoutClick}
+          isOpen={isSideOpen}
+          setIsOpen={setIsSideOpen}
+          isClosing={isSideClosing}
+          onTransitionEnd={handleAnimationEnd}
+        />
       )}
     </div>
   );

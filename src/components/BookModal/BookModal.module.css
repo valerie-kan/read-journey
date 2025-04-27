@@ -1,0 +1,105 @@
+.modal {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 255px;
+  border: 1px solid rgba(104, 104, 104, 0.2);
+  border-radius: 12px;
+  background-color: var(--color-bg);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.closeIcon {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  transition: color 250ms;
+}
+
+.closeIcon:hover {
+  color: var(--color-gray);
+}
+
+.image {
+  border-radius: 8px;
+  width: 140px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.bookTtl {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+.bookAuthor {
+  font-size: 12px;
+  line-height: 117%;
+  letter-spacing: -0.02em;
+  color: var(--color-gray);
+  margin-bottom: 4px;
+}
+
+.pages {
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.addBtn {
+  padding: 12px 24px;
+  background-color: var(--color-bg);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: 0.02em;
+  color: var(--color-white);
+  border: 1px solid rgba(249, 249, 249, 0.2);
+}
+
+.addBtn:hover {
+  border-color: transparent;
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 500px;
+    padding: 50px;
+  }
+
+  .image {
+    width: 153px;
+  }
+
+  .bookTtl {
+    font-size: 20px;
+  }
+
+  .bookAuthor {
+    font-size: 14px;
+    line-height: 129%;
+  }
+  .pages {
+    margin-bottom: 32px;
+  }
+
+  .addBtn {
+    font-size: 16px;
+    line-height: 112%;
+    padding: 14px 28px;
+  }
+}

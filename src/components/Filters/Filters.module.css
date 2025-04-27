@@ -43,7 +43,7 @@
 .submitBtn:hover {
   border-color: transparent;
   background-color: var(--color-white);
-  color: #141414;
+  color: var(--color-black);
 }
 
 @media screen and (min-width: 768px) {

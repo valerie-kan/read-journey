@@ -1,13 +1,26 @@
+import clsx from "clsx";
+
 import css from "./BurgerMenu.module.css";
 
 import sprite from "../../assets/icons/symbol-defs.svg";
 
 import UserNav from "../UserNav/UserNav";
+import Modal from "../Modal/Modal";
 
-const BurgerMenu = ({ onCloseClick, onLogoutClick }) => {
+const BurgerMenu = ({
+  onCloseClick,
+  onLogoutClick,
+  isOpen,
+  setIsOpen,
+  isClosing,
+  onTransitionEnd,
+}) => {
   return (
-    <div className={css.backdrop}>
-      <div className={css.modal}>
+    <Modal isOpen={isOpen} setIsOpen={setIsOpen} onCloseClick={onCloseClick}>
+      <div
+        className={clsx(css.modal, isClosing && css.isClosing)}
+        onTransitionEnd={onTransitionEnd}
+      >
         <svg
           className={css.closeIcon}
           width={28}
@@ -21,7 +34,7 @@ const BurgerMenu = ({ onCloseClick, onLogoutClick }) => {
           Log out
         </button>
       </div>
-    </div>
+    </Modal>
   );
 };
 
