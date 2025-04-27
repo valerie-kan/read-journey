@@ -1,0 +1,47 @@
+.itemWrapper {
+  width: calc((100% - 21px) / 2);
+  cursor: pointer;
+}
+
+.imgCont {
+  width: 137px;
+  height: 208px;
+  margin-bottom: 8px;
+}
+
+.bookImg {
+  display: block;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.bookTtl {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bookAuthor {
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: var(--color-gray);
+}
+
+@media screen and (min-width: 768px) {
+  .itemWrapper {
+    width: calc((100% - 25px * 3) / 4);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .itemWrapper {
+    width: calc((100% - 20px * 4) / 5);
+  }
+}

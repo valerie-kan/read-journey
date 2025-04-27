@@ -3,6 +3,12 @@
   background-color: var(--color-bg);
   padding: 40px 20px;
   box-sizing: border-box;
+  width: 335px;
+}
+
+.ttlWrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 .recomTtl {
@@ -12,15 +18,26 @@
   margin-bottom: 34px;
 }
 
+.filmsWrapper {
+  display: flex;
+  gap: 21px;
+}
+
 @media screen and (min-width: 768px) {
   .recomWrapper {
     padding: 40px;
+    width: 100%;
   }
 
   .recomTtl {
     font-size: 28px;
     line-height: 114%;
     margin-bottom: 28px;
+  }
+
+  .filmsWrapper {
+    column-gap: 25px;
+    flex-wrap: wrap;
   }
 }
 
@@ -29,5 +46,9 @@
     padding-inline: 40px;
     padding-block: 40px 28px;
     width: 847px;
+  }
+
+  .filmsWrapper {
+    column-gap: 20px;
   }
 }
