@@ -22,8 +22,8 @@
 }
 
 .imgCont {
-  width: 71px;
   height: 107px;
+  object-fit: cover;
   margin-bottom: 8px;
 }
 
@@ -45,6 +45,9 @@
 .bookAuthor {
   font-size: 10px;
   line-height: 120%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: var(--color-gray);
 }
 
@@ -74,4 +77,27 @@
 
 .linkIcon:hover {
   color: var(--color-gray);
+}
+
+@media screen and (min-width: 768px) {
+  .sectionWrapper {
+    width: 273px;
+    padding-block: 26px;
+  }
+
+  .sectionTtl {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .booksWrapper {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .sectionWrapper {
+    padding-block: 20px;
+    margin-top: 47px;
+  }
 }

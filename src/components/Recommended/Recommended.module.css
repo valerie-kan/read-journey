@@ -4,6 +4,7 @@
   padding: 40px 20px;
   box-sizing: border-box;
   width: 335px;
+  height: 382px;
 }
 
 .ttlWrapper {
@@ -27,6 +28,7 @@
   .recomWrapper {
     padding: 40px;
     width: 100%;
+    height: 663px;
   }
 
   .recomTtl {
