@@ -14,6 +14,14 @@
   cursor: pointer;
 }
 
+.input::placeholder {
+  color: var(--color-white);
+}
+
+.input:hover {
+  border-color: rgba(249, 249, 249, 0.1);
+}
+
 .passwordInput {
   padding-left: 78px;
 }
@@ -30,12 +38,8 @@
   padding-left: 85px;
 }
 
-.input::placeholder {
-  color: var(--color-white);
-}
-
-.input:hover {
-  border-color: rgba(249, 249, 249, 0.1);
+.pagesInput {
+  padding-left: 125px;
 }
 
 .iconEye {
@@ -105,6 +109,11 @@
     width: 295px;
   }
 
+  .pagesInput {
+    padding-left: 140px;
+    width: 295px;
+  }
+
   .iconEye {
     top: 16px;
     right: 16px;
@@ -125,7 +134,8 @@
 
 @media screen and (min-width: 1440px) {
   .bookInput,
-  .authorInput {
+  .authorInput,
+  .pagesInput {
     width: 100%;
   }
 }

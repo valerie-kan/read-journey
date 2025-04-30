@@ -11,7 +11,8 @@
 }
 
 .bookLabel,
-.authorLabel {
+.authorLabel,
+.pagesLabel {
   position: absolute;
   top: 15px;
   left: 14px;
@@ -53,7 +54,8 @@
   }
 
   .bookLabel,
-  .authorLabel {
+  .authorLabel,
+  .pagesLabel {
     font-size: 14px;
     line-height: 129%;
     top: 17px;
@@ -63,5 +65,11 @@
     padding: 12px 28px;
     font-size: 16px;
     line-height: 112%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .addBookBtn {
+    margin-top: 18px;
   }
 }

@@ -8,6 +8,7 @@ import MainLayout from "./components/MainLayout";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import RecommendedPage from "./pages/RecommendedPage/RecommendedPage";
+import LibraryPage from "./pages/LIbraryPage/LIbraryPage";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
           <Route
             path="/recommended"
             element={<PrivateRoute component={<RecommendedPage />} />}
+          />
+          <Route
+            path="/library"
+            element={<PrivateRoute component={<LibraryPage />} />}
           />
         </Route>
       </Routes>

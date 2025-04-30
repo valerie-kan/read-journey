@@ -18,7 +18,7 @@
   margin-bottom: 34px;
 }
 
-.filmsWrapper {
+.booksWrapper {
   display: flex;
   gap: 21px;
 }
@@ -35,7 +35,7 @@
     margin-bottom: 28px;
   }
 
-  .filmsWrapper {
+  .booksWrapper {
     column-gap: 25px;
     flex-wrap: wrap;
   }
@@ -48,7 +48,7 @@
     width: 847px;
   }
 
-  .filmsWrapper {
+  .booksWrapper {
     column-gap: 20px;
   }
 }

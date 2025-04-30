@@ -12,6 +12,11 @@ const initialState = {
 const bookSlice = createSlice({
   name: "books",
   initialState,
+  reducers: {
+    clearBooks: (state) => {
+      state.books = [];
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getBooks.pending, (state) => {
@@ -32,3 +37,4 @@ const bookSlice = createSlice({
 });
 
 export default bookSlice.reducer;
+export const { clearBooks } = bookSlice.actions;

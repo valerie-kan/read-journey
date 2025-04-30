@@ -9,11 +9,7 @@ const BooksListItem = ({ book }) => {
 
   return (
     <>
-      <li
-        key={book._id}
-        className={css.itemWrapper}
-        onClick={() => setIsOpen(true)}
-      >
+      <li className={css.itemWrapper} onClick={() => setIsOpen(true)}>
         <div className={css.imgCont}>
           <img className={css.bookImg} src={book.imageUrl} alt="Book cover" />
         </div>

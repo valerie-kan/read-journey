@@ -3,15 +3,23 @@ import { useEffect, useState } from "react";
 
 import css from "./Recommended.module.css";
 
-import { selectBooks, selectTotalPages } from "../../redux/books/selectors";
+import {
+  selectBooks,
+  selectIsLoading,
+  selectTotalPages,
+} from "../../redux/books/selectors";
 import { getBooks } from "../../redux/books/operations";
+import { clearBooks } from "../../redux/books/slice";
+import { ErrorToast } from "../../utils/errorToast";
 
 import BooksListItem from "../BooksListItem/BooksListItem";
 import Pagination from "../Pagination/Pagination";
+import Loader from "../Loader";
 
 const Recommended = () => {
   const dispatch = useDispatch();
   const books = useSelector(selectBooks);
+  const isLoading = useSelector(selectIsLoading);
   const totalPages = useSelector(selectTotalPages);
 
   const [limit, setLimit] = useState(getLimit());
@@ -31,22 +39,25 @@ const Recommended = () => {
 
   useEffect(() => {
     try {
+      dispatch(clearBooks());
       dispatch(getBooks({ page, limit })).unwrap();
     } catch (error) {
-      console.log(error.message);
+      ErrorToast(error.message);
     }
   }, [dispatch, page, limit]);
 
   useEffect(() => {
     function handleResize() {
       const newLimit = getLimit();
-      setLimit(newLimit);
+      if (newLimit !== limit) {
+        return setLimit(newLimit);
+      }
     }
 
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [limit]);
 
   return (
     <div className={css.recomWrapper}>
@@ -54,11 +65,18 @@ const Recommended = () => {
         <h2 className={css.recomTtl}>Recommended</h2>
         <Pagination page={page} setPage={setPage} totalPages={totalPages} />
       </div>
-      <ul className={css.filmsWrapper}>
-        {books.map((book) => (
-          <BooksListItem book={book} />
-        ))}
-      </ul>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <ul className={css.booksWrapper}>
+          {books.map(
+            (book) => (
+              console.log(book._id),
+              (<BooksListItem key={book._id} book={book} />)
+            )
+          )}
+        </ul>
+      )}
     </div>
   );
 };

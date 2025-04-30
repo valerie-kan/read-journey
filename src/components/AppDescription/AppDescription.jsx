@@ -7,7 +7,7 @@ import sprite from "../../assets/icons/symbol-defs.svg";
 const AppDescription = () => {
   return (
     <div className={css.sectionWrapper}>
-      <h2 className={css.sectionTtl}>Start your workout</h2>
+      <h3 className={css.sectionTtl}>Start your workout</h3>
       <ul className={css.sectionList}>
         <li className={css.sectionItem}>
           <div className={css.number}>1</div>
