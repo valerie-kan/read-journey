@@ -89,19 +89,10 @@
 
   .submitBtn {
     display: block;
-    border: 1px solid rgba(249, 249, 249, 0.2);
     padding: 12px;
     width: 114px;
-    background-color: var(--color-bg);
-    font-weight: 700;
     font-size: 14px;
     line-height: 129%;
-    letter-spacing: 0.02em;
-  }
-
-  .submitBtn:hover {
-    background-color: var(--color-white);
-    color: var(--color-bg);
   }
 }
 

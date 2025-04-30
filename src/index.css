@@ -11,6 +11,7 @@
   --color-gray: #686868;
   --color-input: #262626;
   --color-black: #141414;
+  --border-color: rgba(249, 249, 249, 0.2);
 
   /* LOGO VARIABLES */
   --logo-mobile: url(./assets/images/logo-mobile@1x.png);
@@ -41,6 +42,7 @@ h3,
 h4,
 p {
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 ul,
@@ -50,10 +52,26 @@ li {
   list-style-type: none;
 }
 
+label {
+  letter-spacing: -0.02em;
+  color: var(--color-gray);
+}
+
 button {
   border-radius: 30px;
   cursor: pointer;
+  font-weight: 700;
+  border: 1px solid var(--border-color);
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  letter-spacing: 0.02em;
   transition: background-color 250ms, color 250ms, border 250ms;
+}
+
+button:hover {
+  border-color: transparent;
+  background-color: var(--color-white);
+  color: var(--color-bg);
 }
 
 img {

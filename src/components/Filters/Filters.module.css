@@ -3,7 +3,6 @@
   margin-bottom: 8px;
   font-size: 10px;
   line-height: 120%;
-  letter-spacing: -0.02em;
 }
 
 .inputBox {
@@ -18,8 +17,6 @@
   left: 14px;
   font-size: 12px;
   line-height: 133%;
-  letter-spacing: -0.02em;
-  color: var(--color-gray);
   cursor: auto;
 }
 
@@ -32,19 +29,8 @@
 
 .submitBtn {
   padding: 10px 20px;
-  background-color: var(--color-bg);
-  font-weight: 700;
   font-size: 14px;
   line-height: 129%;
-  letter-spacing: 0.02em;
-  color: var(--color-white);
-  border: 1px solid rgba(249, 249, 249, 0.2);
-}
-
-.submitBtn:hover {
-  border-color: transparent;
-  background-color: var(--color-white);
-  color: var(--color-black);
 }
 
 @media screen and (min-width: 768px) {

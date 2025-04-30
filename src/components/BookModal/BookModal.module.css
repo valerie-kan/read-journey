@@ -30,7 +30,6 @@
 .image {
   border-radius: 8px;
   width: 140px;
-  display: block;
   margin-bottom: 16px;
 }
 
@@ -38,7 +37,6 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
-  letter-spacing: -0.02em;
   margin-bottom: 2px;
   text-align: center;
 }
@@ -46,7 +44,6 @@
 .bookAuthor {
   font-size: 12px;
   line-height: 117%;
-  letter-spacing: -0.02em;
   color: var(--color-gray);
   margin-bottom: 4px;
 }
@@ -54,7 +51,6 @@
 .pages {
   font-size: 10px;
   line-height: 120%;
-  letter-spacing: -0.02em;
   margin-bottom: 20px;
 }
 
@@ -64,7 +60,6 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 129%;
-  letter-spacing: 0.02em;
   color: var(--color-white);
   border: 1px solid rgba(249, 249, 249, 0.2);
 }

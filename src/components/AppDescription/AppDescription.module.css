@@ -10,7 +10,6 @@
 .sectionTtl {
   font-size: 18px;
   line-height: 100%;
-  letter-spacing: -0.02em;
 }
 
 .sectionList {
@@ -42,7 +41,6 @@
 .sectionText {
   font-size: 14px;
   line-height: 129%;
-  letter-spacing: -0.02em;
 }
 
 .textSpan {
@@ -57,8 +55,8 @@
 .link {
   font-size: 14px;
   line-height: 129%;
-  letter-spacing: -0.02em;
   color: var(--color-gray);
+  letter-spacing: -0.02em;
   transition: color 250ms;
 }
 

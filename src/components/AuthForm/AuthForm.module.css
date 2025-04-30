@@ -51,8 +51,6 @@
   left: 14px;
   font-size: 12px;
   line-height: 133%;
-  letter-spacing: -0.02em;
-  color: var(--color-gray);
   cursor: auto;
 }
 
@@ -65,16 +63,14 @@
 .submitBtn {
   padding: 12px 29px;
   background-color: var(--color-white);
-  font-weight: 700;
   font-size: 14px;
   line-height: 129%;
-  letter-spacing: 0.02em;
   color: var(--color-bg);
   border: 1px solid transparent;
 }
 
 .submitBtn:hover {
-  border-color: rgba(249, 249, 249, 0.2);
+  border-color: var(--border-color);
   background-color: #141414;
   color: var(--color-white);
 }

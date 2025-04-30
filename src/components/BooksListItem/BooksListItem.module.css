@@ -10,7 +10,6 @@
 }
 
 .bookImg {
-  display: block;
   border-radius: 8px;
   width: 100%;
   height: 100%;
@@ -20,7 +19,6 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 129%;
-  letter-spacing: -0.02em;
   margin-bottom: 2px;
   white-space: nowrap;
   overflow: hidden;
@@ -30,7 +28,6 @@
 .bookAuthor {
   font-size: 10px;
   line-height: 120%;
-  letter-spacing: -0.02em;
   color: var(--color-gray);
 }
 
