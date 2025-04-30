@@ -29,7 +29,7 @@ const BurgerMenu = ({
         >
           <use href={`${sprite}#icon-x`} />
         </svg>
-        <UserNav />
+        <UserNav onClick={onCloseClick} />
         <button className={css.submitBtn} type="submit" onClick={onLogoutClick}>
           Log out
         </button>
