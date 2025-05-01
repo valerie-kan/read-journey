@@ -4,8 +4,10 @@ import sprite from "../../assets/icons/symbol-defs.svg";
 
 import Modal from "../Modal/Modal";
 
-const BookModal = ({ book, onCloseClick, isOpen }) => {
-  const handleAddBookClick = () => {};
+const BookModal = ({ book, onCloseClick, isOpen, onAddClick }) => {
+  // const handleAddBookClick = (book) => {
+  //   localStorage.setItem("my-library", book);
+  // };
 
   return (
     <Modal isOpen={isOpen} onCloseClick={onCloseClick}>
@@ -17,11 +19,7 @@ const BookModal = ({ book, onCloseClick, isOpen }) => {
         <p className={css.bookTtl}>{book.title}</p>
         <p className={css.bookAuthor}>{book.author}</p>
         <p className={css.pages}>{`${book.totalPages} pages`}</p>
-        <button
-          className={css.addBtn}
-          type="button"
-          onClick={handleAddBookClick}
-        >
+        <button className={css.addBtn} type="button" onClick={onAddClick}>
           Add to library
         </button>
       </div>

@@ -30,6 +30,12 @@
   --books-mobile-2: url(./assets/images/books-mobile@2x.png);
   --books-desktop: url(./assets/images/books-desktop@1x.png);
   --books-desktop-2: url(./assets/images/books-desktop@2x.png);
+
+  /* OK VARIABLES */
+  --ok-mobile: url(./assets/images/ok-mobile@1x.png);
+  --ok-mobile-2: url(./assets/images/ok-mobile@2x.png);
+  --ok-desktop: url(./assets/images/ok-desktop@1x.png);
+  --ok-desktop-2: url(./assets/images/ok-desktop@2x.png);
 }
 
 body {

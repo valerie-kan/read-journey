@@ -69,12 +69,9 @@ const Recommended = () => {
         <Loader />
       ) : (
         <ul className={css.booksWrapper}>
-          {books.map(
-            (book) => (
-              console.log(book._id),
-              (<BooksListItem key={book._id} book={book} />)
-            )
-          )}
+          {books.map((book) => (
+            <BooksListItem key={book._id} book={book} />
+          ))}
         </ul>
       )}
     </div>

@@ -1,0 +1,91 @@
+.modalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-input);
+  padding: 60px 47px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 241px;
+}
+
+.closeIcon {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  transition: color 250ms;
+}
+
+.closeIcon:hover {
+  color: var(--color-gray);
+}
+
+.image {
+  width: 50px;
+  height: 50px;
+  content: var(--ok-mobile);
+}
+
+.textCont {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.modalTtl {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+.modalText {
+  font-size: 14px;
+  line-height: 129%;
+  color: var(--color-gray);
+  text-align: center;
+}
+
+.span {
+  color: var(--color-white);
+}
+
+@media screen and (min-resolution: 192dpi) {
+  .image {
+    content: var(--ok-mobile-2);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modalWrapper {
+    width: 242px;
+    padding: 50px;
+    gap: 32px;
+  }
+
+  .image {
+    width: 68px;
+    height: 70px;
+    content: var(--ok-desktop);
+  }
+
+  .textCont {
+    gap: 14px;
+  }
+
+  .modalTtl {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .image {
+    content: var(--ok-desktop-2);
+  }
+}

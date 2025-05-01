@@ -18,49 +18,6 @@
   /* margin-bottom: 34px; */
 }
 
-.libContent {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 197px;
-  height: 95%;
-  justify-content: center;
-  align-items: center;
-  margin-inline: auto;
-}
-
-.imgWrapper {
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  background-color: var(--color-input);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image {
-  width: 50px;
-  height: 50px;
-  content: var(--books-mobile);
-}
-
-@media screen and (min-resolution: 192dpi) {
-  .image {
-    content: var(--books-mobile-2);
-  }
-}
-
-.libText {
-  font-size: 14px;
-  line-height: 129%;
-  text-align: center;
-}
-
-.span {
-  color: var(--color-gray);
-}
-
 /* .booksWrapper {
   display: flex;
   gap: 21px;
@@ -73,37 +30,22 @@
     height: 518px;
   }
 
+  .libTtl {
+    font-size: 28px;
+    line-height: 114%;
+    letter-spacing: 0.02em;
+  }
+
   .recomTtl {
     font-size: 28px;
     line-height: 114%;
     /* margin-bottom: 28px; */
   }
 
-  .libContent {
-    width: 284px;
-    gap: 20px;
-  }
-
-  .imgWrapper {
-    width: 130px;
-    height: 130px;
-  }
-
-  .image {
-    width: 70px;
-    height: 70px;
-  }
-
   /* .booksWrapper {
     column-gap: 25px;
     flex-wrap: wrap;
   } */
-}
-
-@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
-  .image {
-    content: var(--books-desktop-2);
-  }
 }
 
 @media screen and (min-width: 1440px) {
