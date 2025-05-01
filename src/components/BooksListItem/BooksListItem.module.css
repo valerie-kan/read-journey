@@ -1,19 +1,33 @@
 .itemWrapper {
   width: calc((100% - 21px) / 2);
-  cursor: pointer;
 }
 
 .imgCont {
   width: 137px;
   height: 208px;
   margin-bottom: 8px;
+  cursor: pointer;
 }
 
 .bookImg {
   border-radius: 8px;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+}
+
+.textAndIconWrapper {
+  position: relative;
+}
+
+.narrowTextWrapper {
+  width: 93px;
+}
+
+.bookTtl,
+.bookAuthor {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .bookTtl {
@@ -21,9 +35,6 @@
   font-size: 14px;
   line-height: 129%;
   margin-bottom: 2px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .bookAuthor {

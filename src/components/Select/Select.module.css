@@ -5,6 +5,7 @@
   letter-spacing: -0.02em;
   position: relative;
   cursor: pointer;
+  margin-bottom: 14px;
 }
 
 .firstRowWrapper {
