@@ -54,7 +54,7 @@ const RegisterForm = () => {
           type="text"
           register={register}
           errors={errors}
-          placeholder="Ilona Ratushniak"
+          placeholder="Your Name"
         />
       </div>
     </AuthForm>

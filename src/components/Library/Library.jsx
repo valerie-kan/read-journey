@@ -1,11 +1,13 @@
 import css from "./Library.module.css";
 
+import Select from "../Select/Select";
+
 const Library = () => {
   return (
     <div className={css.libWrapper}>
       <div className={css.titleWrapper}>
         <h2 className={css.libTtl}>My library</h2>
-        <select name="" id=""></select>
+        <Select />
       </div>
       <div className={css.libContent}>
         <div className={css.imgWrapper}>

@@ -1,0 +1,42 @@
+.selectWrapper {
+  width: 120px;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  position: relative;
+  cursor: pointer;
+}
+
+.firstRowWrapper {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #3e3e3e;
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrowIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.selectList {
+  position: absolute;
+  top: 46px;
+  border-radius: 12px;
+  background-color: var(--color-input);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 14px;
+  width: inherit;
+  box-sizing: border-box;
+}
+
+.selectItem {
+  color: var(--color-gray);
+}
+
+.selected {
+  color: inherit;
+}
