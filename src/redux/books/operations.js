@@ -11,7 +11,7 @@ export const getBooks = createAsyncThunk(
       });
       return data;
     } catch (error) {
-      throw thunkAPI.rejectWithValue(error.responce?.data || error.message);
+      throw thunkAPI.rejectWithValue(error.response?.data || error.message);
     }
   }
 );

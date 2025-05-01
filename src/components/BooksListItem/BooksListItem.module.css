@@ -15,12 +15,22 @@
   height: 100%;
 }
 
+.emptyImg {
+  content: var(--book-cover);
+}
+
+@media screen and (min-resolution: 192dpi) {
+  .emptyImg {
+    content: var(--book-cover-2);
+  }
+}
+
 .textAndIconWrapper {
   position: relative;
 }
 
 .narrowTextWrapper {
-  width: 93px;
+  width: 95px;
 }
 
 .bookTtl,
@@ -46,6 +56,10 @@
 @media screen and (min-width: 768px) {
   .itemWrapper {
     width: calc((100% - 25px * 3) / 4);
+  }
+
+  .narrowTextWrapper {
+    width: 89px;
   }
 }
 

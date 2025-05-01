@@ -2,7 +2,6 @@ import css from "./Filters.module.css";
 
 import Input from "../Input/Input";
 import { useForm } from "react-hook-form";
-// import { yupResolver } from "@hookform/resolvers/yup";
 
 const Filters = () => {
   const {
@@ -16,11 +15,11 @@ const Filters = () => {
       <p className={css.formTtl}>Filters:</p>
       <div className={css.inputsWrapper}>
         <div className={css.inputBox}>
-          <label className={css.bookLabel} htmlFor="book">
+          <label className={css.bookLabel} htmlFor="title">
             Book title:
           </label>
           <Input
-            id="book"
+            id="title"
             type="text"
             register={register}
             errors={errors}

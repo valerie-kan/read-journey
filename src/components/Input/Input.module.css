@@ -30,7 +30,7 @@
   padding-left: 59px;
 }
 
-.bookInput {
+.titleInput {
   padding-left: 77px;
 }
 
@@ -38,7 +38,7 @@
   padding-left: 85px;
 }
 
-.pagesInput {
+.totalPagesInput {
   padding-left: 125px;
 }
 
@@ -99,7 +99,7 @@
     padding-left: 88px;
   }
 
-  .bookInput {
+  .titleInput {
     padding-left: 86px;
     width: 295px;
   }
@@ -109,7 +109,7 @@
     width: 295px;
   }
 
-  .pagesInput {
+  .totalPagesInput {
     padding-left: 140px;
     width: 295px;
   }
@@ -133,9 +133,9 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .bookInput,
+  .titleInput,
   .authorInput,
-  .pagesInput {
+  .totalPagesInput {
     width: 100%;
   }
 }

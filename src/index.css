@@ -36,6 +36,10 @@
   --ok-mobile-2: url(./assets/images/ok-mobile@2x.png);
   --ok-desktop: url(./assets/images/ok-desktop@1x.png);
   --ok-desktop-2: url(./assets/images/ok-desktop@2x.png);
+
+  /* COVER VARIABLES */
+  --book-cover: url(./assets/images/book-cover.png);
+  --book-cover-2: url(./assets/images/book-cover@2x.png);
 }
 
 body {

@@ -1,30 +1,47 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 import css from "./BooksListItem.module.css";
 
 import BookModal from "../BookModal/BookModal";
 import GoodJobModal from "../GoodJobModal/GoodJobModal";
 import clsx from "clsx";
+import { ErrorToast } from "../../utils/errorToast";
+import { addBookFromRecom } from "../../redux/library/operations";
 
 const BooksListItem = ({ book, children }) => {
   const [isBookModalOpen, setIsBookModalOpen] = useState(false);
   const [isGJOpen, setIsGJOpen] = useState(false);
 
-  const handleAddBookClick = (book) => {
-    const existing = JSON.parse(localStorage.getItem("my-library")) || [];
-    const updated = [...existing, book];
-    localStorage.setItem("my-library", JSON.stringify(updated));
-    setIsBookModalOpen(false);
-    setIsGJOpen(true);
+  const dispatch = useDispatch();
+
+  const handleAddBookClick = async (id) => {
+    try {
+      const book = await dispatch(addBookFromRecom(id)).unwrap();
+      const prevBooks = JSON.parse(localStorage.getItem("my-library")) || [];
+      const updatedBooks = [...prevBooks, book];
+      localStorage.setItem("my-library", JSON.stringify(updatedBooks));
+
+      setIsBookModalOpen(false);
+      setIsGJOpen(true);
+    } catch (e) {
+      console.log(e.message);
+      ErrorToast(e);
+    }
   };
 
   const hasChildren = Boolean(children);
+  const isBookCover = Boolean(book.imageUrl);
 
   return (
     <>
       <li className={css.itemWrapper}>
         <div className={css.imgCont} onClick={() => setIsBookModalOpen(true)}>
-          <img className={css.bookImg} src={book.imageUrl} alt="Book cover" />
+          <img
+            className={clsx(css.bookImg, !isBookCover && css.emptyImg)}
+            src={book.imageUrl || "../../assets/images/book-cover.png"}
+            alt="Book cover"
+          />
         </div>
         <div className={css.textAndIconWrapper}>
           <div
@@ -43,7 +60,7 @@ const BooksListItem = ({ book, children }) => {
         <BookModal
           book={book}
           onCloseClick={() => setIsBookModalOpen(false)}
-          onAddClick={() => handleAddBookClick(book)}
+          onAddClick={() => handleAddBookClick(book._id)}
           isOpen={isBookModalOpen}
         />
       )}

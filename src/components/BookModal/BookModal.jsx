@@ -5,10 +5,6 @@ import sprite from "../../assets/icons/symbol-defs.svg";
 import Modal from "../Modal/Modal";
 
 const BookModal = ({ book, onCloseClick, isOpen, onAddClick }) => {
-  // const handleAddBookClick = (book) => {
-  //   localStorage.setItem("my-library", book);
-  // };
-
   return (
     <Modal isOpen={isOpen} onCloseClick={onCloseClick}>
       <div className={css.modal}>
