@@ -10,25 +10,23 @@ import { addBookFromRecom } from "../../redux/library/operations";
 import BookModal from "../BookModal/BookModal";
 import GoodJobModal from "../GoodJobModal/GoodJobModal";
 
-const BooksListItem = ({ book, children /*, isBookInLibrary*/ }) => {
+const BooksListItem = ({ book, children }) => {
   const [isBookModalOpen, setIsBookModalOpen] = useState(false);
   const [isGJOpen, setIsGJOpen] = useState(false);
 
   const dispatch = useDispatch();
 
-  const handleAddBookClick = async (id) => {
+  const handleAddBookClick = async (bookInfo) => {
     try {
-      // const isBookAdded = Boolean(isBookInLibrary(id));
-      // if (isBookInLibrary) {
-      //   ErrorToast("This book is already in your library");
-      //   return;
-      // }
-      await dispatch(addBookFromRecom(id)).unwrap();
+      if (book.name === bookInfo.name) {
+        ErrorToast("This book is already added to your library");
+        return;
+      }
+      await dispatch(addBookFromRecom(bookInfo.id)).unwrap();
       setIsBookModalOpen(false);
       setIsGJOpen(true);
     } catch (e) {
-      console.log(e.message);
-      ErrorToast(e);
+      ErrorToast(e.message);
     }
   };
 
@@ -62,7 +60,7 @@ const BooksListItem = ({ book, children /*, isBookInLibrary*/ }) => {
         <BookModal
           book={book}
           onCloseClick={() => setIsBookModalOpen(false)}
-          onAddClick={() => handleAddBookClick(book._id)}
+          onAddClick={() => handleAddBookClick(book)}
           isOpen={isBookModalOpen}
           isBookCover={isBookCover}
           hasChildren={hasChildren}
