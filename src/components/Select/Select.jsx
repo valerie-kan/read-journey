@@ -40,7 +40,7 @@ const Select = () => {
                 css.selectItem,
                 selectedItem === label && css.selected
               )}
-              id={id}
+              key={id}
               onClick={() => onItemClick(label)}
             >
               {label}

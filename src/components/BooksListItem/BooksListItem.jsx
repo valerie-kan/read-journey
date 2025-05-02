@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import clsx from "clsx";
 
 import css from "./BooksListItem.module.css";
 
-import BookModal from "../BookModal/BookModal";
-import GoodJobModal from "../GoodJobModal/GoodJobModal";
-import clsx from "clsx";
 import { ErrorToast } from "../../utils/errorToast";
 import { addBookFromRecom } from "../../redux/library/operations";
+// import { selectBooks } from "../../redux/library/selectors";
+
+import BookModal from "../BookModal/BookModal";
+import GoodJobModal from "../GoodJobModal/GoodJobModal";
 
 const BooksListItem = ({ book, children }) => {
   const [isBookModalOpen, setIsBookModalOpen] = useState(false);
@@ -17,11 +19,7 @@ const BooksListItem = ({ book, children }) => {
 
   const handleAddBookClick = async (id) => {
     try {
-      const book = await dispatch(addBookFromRecom(id)).unwrap();
-      const prevBooks = JSON.parse(localStorage.getItem("my-library")) || [];
-      const updatedBooks = [...prevBooks, book];
-      localStorage.setItem("my-library", JSON.stringify(updatedBooks));
-
+      await dispatch(addBookFromRecom(id)).unwrap();
       setIsBookModalOpen(false);
       setIsGJOpen(true);
     } catch (e) {

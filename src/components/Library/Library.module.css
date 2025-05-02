@@ -42,7 +42,7 @@
   .libWrapper {
     padding: 40px;
     width: 100%;
-    height: 518px;
+    height: 651px;
   }
 
   .libTtl {
@@ -66,7 +66,6 @@
 @media screen and (min-width: 1440px) {
   .libWrapper {
     width: 847px;
-    height: 651px;
   }
 
   .booksWrapper {

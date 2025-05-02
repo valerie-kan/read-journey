@@ -23,18 +23,16 @@ const AddBook = () => {
   } = useForm({ resolver: yupResolver(AddBookSchema) });
 
   const dispatch = useDispatch();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const onSubmit = async (data) => {
     try {
-      const book = await dispatch(addBook(data)).unwrap();
-      const prevBooks = JSON.parse(localStorage.getItem("my-library")) || [];
-      const updatedBooks = [...prevBooks, book];
-      localStorage.setItem("my-library", JSON.stringify(updatedBooks));
+      await dispatch(addBook(data)).unwrap();
       reset();
       setIsModalOpen(true);
     } catch (error) {
-      ErrorToast(error.message || "This book already exists in your list");
+      ErrorToast(error.message);
     }
   };
 

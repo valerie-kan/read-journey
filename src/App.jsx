@@ -1,9 +1,15 @@
 import { Route, Routes } from "react-router";
 import { Toaster } from "react-hot-toast";
+import { Suspense, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { refreshUser } from "./redux/auth/operations";
+import { selectIsRefreshing, selectToken } from "./redux/auth/selectors";
 
 import RestrictedRoute from "./components/RestrictedRoute";
 import PrivateRoute from "./components/PrivateRoute";
 import MainLayout from "./components/MainLayout";
+import Loader from "./components/Loader";
 
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
@@ -11,8 +17,20 @@ import RecommendedPage from "./pages/RecommendedPage/RecommendedPage";
 import LibraryPage from "./pages/LIbraryPage/LIbraryPage";
 
 function App() {
+  const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
+
+  const token = useSelector(selectToken);
+
+  useEffect(() => {
+    if (!token) return;
+    dispatch(refreshUser());
+  }, [dispatch, token]);
+
+  if (isRefreshing) return <Loader />;
+
   return (
-    <>
+    <Suspense fallback={<Loader />}>
       <Toaster />
       <Routes>
         <Route
@@ -34,7 +52,7 @@ function App() {
           />
         </Route>
       </Routes>
-    </>
+    </Suspense>
   );
 }
 

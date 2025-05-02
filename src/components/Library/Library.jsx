@@ -1,35 +1,27 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import css from "./Library.module.css";
 
 import sprite from "../../assets/icons/symbol-defs.svg";
 
-// import { selectBooks } from "../../redux/library/selectors";
+import { selectBooks } from "../../redux/library/selectors";
 import { deleteBook } from "../../redux/library/operations";
+
+import { ErrorToast } from "../../utils/errorToast";
+import { SuccessToast } from "../../utils/successToast";
 
 import Select from "../Select/Select";
 import EmptyLibrary from "../EmptyLibrary/EmptyLibrary";
 import BooksListItem from "../BooksListItem/BooksListItem";
-import { ErrorToast } from "../../utils/errorToast";
-import { SuccessToast } from "../../utils/successToast";
-import { useState } from "react";
 
 const Library = () => {
-  // const books = useSelector(selectBooks);
+  const books = useSelector(selectBooks);
   const dispatch = useDispatch();
-
-  const [books, setBooks] = useState(() => {
-    const saved = localStorage.getItem("my-library");
-    return saved ? JSON.parse(saved) : [];
-  });
 
   const handleDeleteClick = async (id) => {
     try {
       await dispatch(deleteBook(id)).unwrap();
       SuccessToast("The book was deleted");
-      const updatedBooks = books.filter((book) => book._id !== id);
-      setBooks(updatedBooks);
-      localStorage.setItem("my-library", JSON.stringify(updatedBooks));
     } catch (error) {
       ErrorToast(error.message);
     }

@@ -1,7 +1,9 @@
 import axios from "axios";
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: "https://readjourney.b.goit.study/api",
 });
 
-export default api;
+export const refreshApi = axios.create({
+  baseURL: "https://readjourney.b.goit.study/api",
+});

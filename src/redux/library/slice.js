@@ -20,7 +20,6 @@ const librarySlice = createSlice({
         // console.log(action.payload);
         state.isLoading = false;
         state.library = [...state.library, action.payload];
-        // localStorage.setItem("my-library", JSON.stringify(state.library));
       })
       .addCase(addBook.rejected, (state, action) => {
         state.isLoading = false;
@@ -33,7 +32,6 @@ const librarySlice = createSlice({
       .addCase(addBookFromRecom.fulfilled, (state, action) => {
         state.isLoading = false;
         state.library = [...state.library, action.payload];
-        // localStorage.setItem("my-library", JSON.stringify(state.library));
       })
       .addCase(addBookFromRecom.rejected, (state, action) => {
         state.isLoading = false;
@@ -46,7 +44,7 @@ const librarySlice = createSlice({
       .addCase(deleteBook.fulfilled, (state, action) => {
         state.isLoading = false;
         state.library = state.library.filter(
-          (book) => book._id !== action.payload.id
+          (book) => book._id !== action.payload
         );
       })
       .addCase(deleteBook.rejected, (state, action) => {
