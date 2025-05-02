@@ -24,7 +24,7 @@ const persistLibConfig = {
 const persistAuthConfig = {
   key: "auth",
   storage,
-  whitelist: ["token", "user", "isLoggedIn"],
+  whitelist: ["token"],
 };
 
 export const store = configureStore({

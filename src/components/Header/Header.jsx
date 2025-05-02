@@ -18,6 +18,7 @@ import UserNav from "../UserNav/UserNav";
 const Header = () => {
   const dispatch = useDispatch();
   const name = useSelector(selectUserName);
+
   const [isSideOpen, setIsSideOpen] = useState(false);
   const [isSideClosing, setIsSideClosing] = useState(false);
 

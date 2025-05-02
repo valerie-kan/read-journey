@@ -20,6 +20,7 @@
 
 .booksWrapper {
   display: flex;
+  flex-wrap: nowrap;
   gap: 21px;
 }
 
