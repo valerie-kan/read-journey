@@ -6,12 +6,11 @@ import css from "./BooksListItem.module.css";
 
 import { ErrorToast } from "../../utils/errorToast";
 import { addBookFromRecom } from "../../redux/library/operations";
-// import { selectBooks } from "../../redux/library/selectors";
 
 import BookModal from "../BookModal/BookModal";
 import GoodJobModal from "../GoodJobModal/GoodJobModal";
 
-const BooksListItem = ({ book, children }) => {
+const BooksListItem = ({ book, children /*, isBookInLibrary*/ }) => {
   const [isBookModalOpen, setIsBookModalOpen] = useState(false);
   const [isGJOpen, setIsGJOpen] = useState(false);
 
@@ -19,6 +18,11 @@ const BooksListItem = ({ book, children }) => {
 
   const handleAddBookClick = async (id) => {
     try {
+      // const isBookAdded = Boolean(isBookInLibrary(id));
+      // if (isBookInLibrary) {
+      //   ErrorToast("This book is already in your library");
+      //   return;
+      // }
       await dispatch(addBookFromRecom(id)).unwrap();
       setIsBookModalOpen(false);
       setIsGJOpen(true);
@@ -60,6 +64,8 @@ const BooksListItem = ({ book, children }) => {
           onCloseClick={() => setIsBookModalOpen(false)}
           onAddClick={() => handleAddBookClick(book._id)}
           isOpen={isBookModalOpen}
+          isBookCover={isBookCover}
+          hasChildren={hasChildren}
         />
       )}
       {isGJOpen && (

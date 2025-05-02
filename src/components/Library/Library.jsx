@@ -27,6 +27,10 @@ const Library = () => {
     }
   };
 
+  // const isBookInLibrary = (id) => {
+  //   return books.find((book) => book._id === id);
+  // };
+
   return (
     <div className={css.libWrapper}>
       <div className={css.titleWrapper}>
@@ -36,7 +40,11 @@ const Library = () => {
       {books.length > 0 ? (
         <ul className={css.booksWrapper}>
           {books.map((book) => (
-            <BooksListItem key={book._id} book={book}>
+            <BooksListItem
+              key={book._id}
+              book={book}
+              // isBookInLibrary={isBookInLibrary}
+            >
               <div
                 className={css.iconWrapper}
                 onClick={() => handleDeleteClick(book._id)}

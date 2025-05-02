@@ -33,6 +33,16 @@
   margin-bottom: 16px;
 }
 
+.emptyImg {
+  content: var(--book-cover);
+}
+
+@media screen and (min-resolution: 192dpi) {
+  .emptyImg {
+    content: var(--book-cover-2);
+  }
+}
+
 .bookTtl {
   font-weight: 700;
   font-size: 18px;
@@ -54,7 +64,7 @@
   margin-bottom: 20px;
 }
 
-.addBtn {
+.bookBtn {
   padding: 12px 24px;
   background-color: var(--color-bg);
   font-weight: 700;
@@ -92,7 +102,7 @@
     margin-bottom: 32px;
   }
 
-  .addBtn {
+  .bookBtn {
     font-size: 16px;
     line-height: 112%;
     padding: 14px 28px;

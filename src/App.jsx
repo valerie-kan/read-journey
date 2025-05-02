@@ -4,7 +4,7 @@ import { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getCurrentUser, refreshUser } from "./redux/auth/operations";
-import { selectIsRefreshing, selectToken } from "./redux/auth/selectors";
+import { selectIsRefreshing } from "./redux/auth/selectors";
 
 import RestrictedRoute from "./components/RestrictedRoute";
 import PrivateRoute from "./components/PrivateRoute";
@@ -20,11 +20,8 @@ import { ErrorToast } from "./utils/errorToast";
 function App() {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
-  // const token = useSelector(selectToken);
 
   useEffect(() => {
-    // if (!token) return;
-
     const restoreSession = async () => {
       try {
         const result = await dispatch(refreshUser()).unwrap();
