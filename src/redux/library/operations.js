@@ -38,3 +38,16 @@ export const deleteBook = createAsyncThunk(
     }
   }
 );
+
+export const sortBooks = createAsyncThunk(
+  "books/sortBooks",
+  async (status, thunkAPI) => {
+    try {
+      const { data } = await api.get(`/books/own?status=${status}`);
+      // console.log(data);
+      return data;
+    } catch (error) {
+      throw thunkAPI.rejectWithValue(error.response?.data || error.message);
+    }
+  }
+);

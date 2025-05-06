@@ -1,32 +1,34 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import clsx from "clsx";
 
 import css from "./BooksListItem.module.css";
 
 import { ErrorToast } from "../../utils/errorToast";
 import { addBookFromRecom } from "../../redux/library/operations";
+import { selectMyBooks } from "../../redux/library/selectors";
 
 import BookModal from "../BookModal/BookModal";
 import GoodJobModal from "../GoodJobModal/GoodJobModal";
 
 const BooksListItem = ({ book, children }) => {
+  const myBooks = useSelector(selectMyBooks);
   const [isBookModalOpen, setIsBookModalOpen] = useState(false);
   const [isGJOpen, setIsGJOpen] = useState(false);
 
   const dispatch = useDispatch();
 
-  const handleAddBookClick = async (bookInfo) => {
+  const handleAddBookClick = async (book) => {
     try {
-      if (book.name === bookInfo.name) {
-        ErrorToast("This book is already added to your library");
-        return;
+      if (myBooks.find((myBook) => myBook.title === book.title)) {
+        return ErrorToast(`${book.title} is already in your library`);
       }
-      await dispatch(addBookFromRecom(bookInfo.id)).unwrap();
-      setIsBookModalOpen(false);
+      await dispatch(addBookFromRecom(book._id)).unwrap();
       setIsGJOpen(true);
     } catch (e) {
       ErrorToast(e.message);
+    } finally {
+      setIsBookModalOpen(false);
     }
   };
 

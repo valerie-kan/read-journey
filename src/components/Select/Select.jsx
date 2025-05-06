@@ -7,18 +7,19 @@ import sprite from "../../assets/icons/symbol-defs.svg";
 
 const itemsList = [
   { id: "unread", label: "Unread" },
-  { id: "inProgress", label: "In progress" },
+  { id: "in-progress", label: "In progress" },
   { id: "done", label: "Done" },
   { id: "all", label: "All books" },
 ];
 
-const Select = () => {
+const Select = ({ filterBooks }) => {
   const [selectedItem, setSelectedItem] = useState("All books");
   const [isOpen, setIsOpen] = useState(false);
 
-  const onItemClick = (item) => {
-    setSelectedItem(item);
+  const onItemClick = (status, label) => {
+    setSelectedItem(label);
     setIsOpen(false);
+    filterBooks(status);
   };
 
   return (
@@ -41,7 +42,7 @@ const Select = () => {
                 selectedItem === label && css.selected
               )}
               key={id}
-              onClick={() => onItemClick(label)}
+              onClick={() => onItemClick(id, label)}
             >
               {label}
             </li>

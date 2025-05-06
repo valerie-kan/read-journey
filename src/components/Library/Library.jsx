@@ -1,11 +1,16 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
 import css from "./Library.module.css";
 
 import sprite from "../../assets/icons/symbol-defs.svg";
 
-import { selectBooks } from "../../redux/library/selectors";
-import { deleteBook } from "../../redux/library/operations";
+import {
+  selectFiltered,
+  selectIsLoading,
+  selectMyBooks,
+} from "../../redux/library/selectors";
+import { deleteBook, sortBooks } from "../../redux/library/operations";
 
 import { ErrorToast } from "../../utils/errorToast";
 import { SuccessToast } from "../../utils/successToast";
@@ -13,10 +18,22 @@ import { SuccessToast } from "../../utils/successToast";
 import Select from "../Select/Select";
 import EmptyLibrary from "../EmptyLibrary/EmptyLibrary";
 import BooksListItem from "../BooksListItem/BooksListItem";
+import Loader from "../Loader";
 
 const Library = () => {
-  const books = useSelector(selectBooks);
   const dispatch = useDispatch();
+  const myBooks = useSelector(selectMyBooks);
+  const filteredBooks = useSelector(selectFiltered);
+  const isLoading = useSelector(selectIsLoading);
+
+  const [isFiltered, setIsFiltered] = useState(false);
+  let books = myBooks;
+
+  if (isFiltered) {
+    books = filteredBooks;
+  } else {
+    books = myBooks;
+  }
 
   const handleDeleteClick = async (id) => {
     try {
@@ -27,13 +44,28 @@ const Library = () => {
     }
   };
 
+  const filterBooks = async (status) => {
+    if (status !== "all") {
+      setIsFiltered(true);
+      try {
+        await dispatch(sortBooks(status)).unwrap();
+      } catch (error) {
+        ErrorToast(error.message);
+      }
+    } else {
+      setIsFiltered(false);
+    }
+  };
+
   return (
     <div className={css.libWrapper}>
       <div className={css.titleWrapper}>
         <h2 className={css.libTtl}>My library</h2>
-        <Select />
+        <Select filterBooks={filterBooks} />
       </div>
-      {books.length > 0 ? (
+      {isLoading ? (
+        <Loader />
+      ) : books.length > 0 ? (
         <ul className={css.booksWrapper}>
           {books.map((book) => (
             <BooksListItem key={book._id} book={book}>

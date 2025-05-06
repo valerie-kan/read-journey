@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import css from "./Recommended.module.css";
 
 import {
-  selectBooks,
+  selectRecomBooks,
   selectIsLoading,
   selectTotalPages,
 } from "../../redux/books/selectors";
@@ -19,7 +19,7 @@ import Loader from "../Loader";
 
 const Recommended = () => {
   const dispatch = useDispatch();
-  const books = useSelector(selectBooks);
+  const books = useSelector(selectRecomBooks);
   const isLoading = useSelector(selectIsLoading);
   const totalPages = useSelector(selectTotalPages);
 

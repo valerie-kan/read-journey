@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addBook, addBookFromRecom, deleteBook } from "./operations";
+
+import { addBook, addBookFromRecom, deleteBook, sortBooks } from "./operations";
 
 const initialState = {
   library: [],
+  filteredBooks: [],
   isLoading: false,
   error: null,
 };
@@ -34,6 +36,18 @@ const librarySlice = createSlice({
         state.library = [...state.library, action.payload];
       })
       .addCase(addBookFromRecom.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(sortBooks.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(sortBooks.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.filteredBooks = action.payload;
+      })
+      .addCase(sortBooks.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })

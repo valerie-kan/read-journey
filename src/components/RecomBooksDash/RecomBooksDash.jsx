@@ -5,7 +5,7 @@ import css from "./RecomBooksDash.module.css";
 
 import sprite from "../../assets/icons/symbol-defs.svg";
 
-import { selectBooks, selectIsLoading } from "../../redux/books/selectors";
+import { selectRecomBooks, selectIsLoading } from "../../redux/books/selectors";
 import { getBooks } from "../../redux/books/operations";
 import { clearBooks } from "../../redux/books/slice";
 
@@ -14,7 +14,7 @@ import { Link } from "react-router";
 
 const RecomBooksDash = () => {
   const dispatch = useDispatch();
-  const books = useSelector(selectBooks);
+  const books = useSelector(selectRecomBooks);
   const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
