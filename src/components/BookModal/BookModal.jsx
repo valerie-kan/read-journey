@@ -1,9 +1,14 @@
+import { Link } from "react-router";
+import clsx from "clsx";
+import { useContext } from "react";
+
 import css from "./BookModal.module.css";
 
 import sprite from "../../assets/icons/symbol-defs.svg";
 
 import Modal from "../Modal/Modal";
-import clsx from "clsx";
+
+import { BookContext } from "../../context/BookContext";
 
 const BookModal = ({
   book,
@@ -13,7 +18,7 @@ const BookModal = ({
   isBookCover,
   hasChildren,
 }) => {
-  const onReadClick = () => {};
+  const { setSelectedBook } = useContext(BookContext);
 
   return (
     <Modal isOpen={isOpen} onCloseClick={onCloseClick}>
@@ -30,8 +35,14 @@ const BookModal = ({
         <p className={css.bookAuthor}>{book.author}</p>
         <p className={css.pages}>{`${book.totalPages} pages`}</p>
         {hasChildren ? (
-          <button className={css.bookBtn} type="button" onClick={onReadClick}>
-            Start reading
+          <button
+            className={css.bookBtn}
+            type="button"
+            onClick={() => setSelectedBook(book)}
+          >
+            <Link className={css.readLink} to="/reading">
+              Start reading
+            </Link>
           </button>
         ) : (
           <button className={css.bookBtn} type="button" onClick={onAddClick}>

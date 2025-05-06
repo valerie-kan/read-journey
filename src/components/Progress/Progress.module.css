@@ -1,0 +1,62 @@
+.progressTtl {
+  margin-top: 40px;
+  margin-bottom: 14px;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+.progressText {
+  font-size: 14px;
+  line-height: 129%;
+  color: var(--color-gray);
+}
+
+.starCont {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: var(--color-input);
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.star {
+  width: 32px;
+  height: 32px;
+}
+
+@media screen and (min-resolution: 192dpi) {
+  .star {
+    content: var(--star-2);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .progressTtl {
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  .starCont {
+    margin-block: 50px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .star {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .progressTtl {
+    margin-top: 40px;
+  }
+
+  .starCont {
+    margin-block: 60px;
+  }
+}

@@ -28,3 +28,7 @@ export const AddBookSchema = Yup.object({
   author: Yup.string().required("Author is required"),
   totalPages: Yup.number().required("Number of pages is required"),
 });
+
+export const AddReadingSchema = Yup.object({
+  startPage: Yup.number().required("Please enter the start page"),
+});

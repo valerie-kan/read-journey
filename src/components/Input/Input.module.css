@@ -42,6 +42,10 @@
   padding-left: 125px;
 }
 
+.startPageInput {
+  padding-left: 100px;
+}
+
 .iconEye {
   position: absolute;
   width: 18px;
@@ -111,6 +115,11 @@
 
   .totalPagesInput {
     padding-left: 140px;
+    width: 295px;
+  }
+
+  .startPageInput {
+    padding-left: 114px;
     width: 295px;
   }
 

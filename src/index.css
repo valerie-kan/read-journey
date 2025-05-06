@@ -40,6 +40,10 @@
   /* COVER VARIABLES */
   --book-cover: url(./assets/images/book-cover.png);
   --book-cover-2: url(./assets/images/book-cover@2x.png);
+
+  /* STAR VARIABLES */
+  --star: url(./assets/images/star@1x.png);
+  --star-2: url(./assets/images/star@2x.png);
 }
 
 body {

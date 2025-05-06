@@ -1,0 +1,45 @@
+.startTtl {
+  font-size: 10px;
+  line-height: 120%;
+  margin-left: 14px;
+  margin-bottom: 8px;
+}
+
+.inputBox {
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  top: 15px;
+  left: 14px;
+  font-size: 12px;
+  line-height: 133%;
+  cursor: auto;
+}
+
+.startBtn {
+  padding: 10px 20px;
+  font-size: 14px;
+  line-height: 129%;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .startTtl {
+    font-size: 14px;
+    line-height: 129%;
+  }
+
+  .label {
+    font-size: 14px;
+    line-height: 129%;
+    top: 17px;
+  }
+
+  .submitBtn {
+    padding: 12px 28px;
+    font-size: 16px;
+    line-height: 112%;
+  }
+}

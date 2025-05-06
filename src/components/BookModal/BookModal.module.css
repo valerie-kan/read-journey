@@ -80,6 +80,11 @@
   color: var(--color-black);
 }
 
+.readLink {
+  text-decoration: none;
+  color: inherit;
+}
+
 @media screen and (min-width: 768px) {
   .modal {
     width: 500px;

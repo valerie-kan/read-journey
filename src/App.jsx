@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCurrentUser, refreshUser } from "./redux/auth/operations";
 import { selectIsRefreshing } from "./redux/auth/selectors";
 
+import { ErrorToast } from "./utils/errorToast";
+
 import RestrictedRoute from "./components/RestrictedRoute";
 import PrivateRoute from "./components/PrivateRoute";
 import MainLayout from "./components/MainLayout";
@@ -15,7 +17,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import RecommendedPage from "./pages/RecommendedPage/RecommendedPage";
 import LibraryPage from "./pages/LIbraryPage/LIbraryPage";
-import { ErrorToast } from "./utils/errorToast";
+import ReadingPage from "./pages/ReadingPage/ReadingPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -58,6 +60,10 @@ function App() {
           <Route
             path="/library"
             element={<PrivateRoute component={<LibraryPage />} />}
+          />
+          <Route
+            path="/reading"
+            element={<PrivateRoute component={<ReadingPage />} />}
           />
         </Route>
       </Routes>
