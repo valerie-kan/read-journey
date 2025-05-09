@@ -17,26 +17,13 @@ import BooksListItem from "../BooksListItem/BooksListItem";
 import Pagination from "../Pagination/Pagination";
 import Loader from "../Loader";
 
-const Recommended = () => {
+const Recommended = ({ limit, getLimit, setLimit }) => {
   const dispatch = useDispatch();
   const books = useSelector(selectRecomBooks);
   const isLoading = useSelector(selectIsLoading);
   const totalPages = useSelector(selectTotalPages);
 
-  const [limit, setLimit] = useState(getLimit());
   const [page, setPage] = useState(1);
-
-  function getLimit() {
-    const width = window.innerWidth;
-
-    if (width < 768) {
-      return 2;
-    } else if (width < 1440) {
-      return 8;
-    } else {
-      return 10;
-    }
-  }
 
   useEffect(() => {
     try {
@@ -58,7 +45,7 @@ const Recommended = () => {
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  }, [limit]);
+  }, [getLimit, limit, setLimit]);
 
   return (
     <div className={css.recomWrapper}>

@@ -4,10 +4,10 @@ import { api } from "../../utils/api";
 
 export const getBooks = createAsyncThunk(
   "books/getBooks",
-  async ({ page, limit }, thunkAPI) => {
+  async ({ page = 1, limit, filters = {} }, thunkAPI) => {
     try {
       const { data } = await api.get("/books/recommend", {
-        params: { page, limit },
+        params: { page, limit, ...filters },
       });
       return data;
     } catch (error) {

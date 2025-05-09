@@ -1,17 +1,35 @@
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+
 import css from "./Filters.module.css";
 
-import Input from "../Input/Input";
-import { useForm } from "react-hook-form";
+import { getBooks } from "../../redux/books/operations";
 
-const Filters = () => {
+import { ErrorToast } from "../../utils/errorToast";
+
+import Input from "../Input/Input";
+
+const Filters = ({ limit }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
+  const dispatch = useDispatch();
+
+  const onSubmit = async (filters) => {
+    try {
+      await dispatch(getBooks({ limit, filters })).unwrap();
+      reset();
+    } catch (error) {
+      ErrorToast(error.message);
+    }
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <p className={css.formTtl}>Filters:</p>
       <div className={css.inputsWrapper}>
         <div className={css.inputBox}>
