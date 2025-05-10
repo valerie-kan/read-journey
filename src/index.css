@@ -1,16 +1,18 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
-  font-family: "Poppins", sans-serif;
-
-  color-scheme: dark;
-  color: var(--color-white);
-  background-color: var(--color-black);
-
   --color-bg: #1f1f1f;
   --color-white: #f9f9f9;
   --color-white-lib: #e3e3e3;
   --color-gray: #686868;
   --color-input: #262626;
   --color-black: #141414;
+  --color-green: #30b94d;
+  --color-red: #e90516;
   --border-color: rgba(249, 249, 249, 0.2);
 
   /* LOGO VARIABLES */
@@ -47,6 +49,10 @@
 }
 
 body {
+  font-family: "Poppins", sans-serif;
+  color-scheme: dark;
+  color: var(--color-white);
+  background-color: var(--color-black);
   margin: 0 auto;
 }
 

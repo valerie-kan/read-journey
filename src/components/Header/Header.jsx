@@ -14,6 +14,7 @@ import { ErrorToast } from "../../utils/errorToast";
 
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import UserNav from "../UserNav/UserNav";
+import { clearLibrary } from "../../redux/library/slice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -44,6 +45,7 @@ const Header = () => {
   const onLogoutClick = async () => {
     try {
       await dispatch(logout()).unwrap();
+      dispatch(clearLibrary());
       SuccessToast("Log out is successfull!");
       onCloseClick();
     } catch (e) {

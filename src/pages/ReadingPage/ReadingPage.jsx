@@ -8,6 +8,7 @@ import Dashboard from "../../components/Dashboard/Dashboard";
 import AddReading from "../../components/AddReading/AddReading";
 import Progress from "../../components/Progress/Progress";
 import MyBook from "../../components/MyBook/MyBook";
+import Details from "../../components/Details/Details";
 
 const ReadingPage = () => {
   const { selectedBook } = useContext(BookContext);
@@ -31,7 +32,8 @@ const ReadingPage = () => {
           isReading={isReading}
           setIsReading={setIsReading}
         />
-        <Progress />
+        {/* <Progress /> */}
+        <Details bookId={bookId} />
       </Dashboard>
       <MyBook book={selectedBook} isReading={isReading} />
     </div>

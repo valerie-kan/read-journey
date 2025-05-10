@@ -1,0 +1,77 @@
+.statText {
+  display: none;
+}
+
+.statWrapper {
+  background-color: var(--color-input);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.statDetails {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.colorBox {
+  border-radius: 4px;
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-green);
+}
+
+.percAndPageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.percent {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+}
+
+.pages {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 120%;
+  color: var(--color-gray);
+}
+
+@media screen and (min-width: 768px) {
+  .statWrapper {
+    padding: 28px;
+  }
+
+  .percAndPageWrapper {
+    gap: 8px;
+  }
+
+  .percent {
+    font-size: 20px;
+    line-height: 100%;
+  }
+
+  .pages {
+    font-size: 12px;
+    line-height: 117%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .statWrapper {
+    padding: 20px;
+  }
+
+  .statText {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 129%;
+    color: var(--color-gray);
+    margin-bottom: 20px;
+    margin-right: 20px;
+  }
+}

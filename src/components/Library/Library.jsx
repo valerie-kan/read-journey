@@ -10,7 +10,7 @@ import {
   selectIsLoading,
   selectMyBooks,
 } from "../../redux/library/selectors";
-import { deleteBook, sortBooks } from "../../redux/library/operations";
+import { deleteBook, getMyBooks } from "../../redux/library/operations";
 
 import { ErrorToast } from "../../utils/errorToast";
 import { SuccessToast } from "../../utils/successToast";
@@ -25,6 +25,8 @@ const Library = () => {
   const myBooks = useSelector(selectMyBooks);
   const filteredBooks = useSelector(selectFiltered);
   const isLoading = useSelector(selectIsLoading);
+
+  console.log(myBooks);
 
   const [isFiltered, setIsFiltered] = useState(false);
   let books = myBooks;
@@ -48,7 +50,7 @@ const Library = () => {
     if (status !== "all") {
       setIsFiltered(true);
       try {
-        await dispatch(sortBooks(status)).unwrap();
+        await dispatch(getMyBooks(status)).unwrap();
       } catch (error) {
         ErrorToast(error.message);
       }

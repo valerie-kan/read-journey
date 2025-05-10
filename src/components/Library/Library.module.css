@@ -1,7 +1,6 @@
 .libWrapper {
   border-radius: 30px;
   background-color: var(--color-bg);
-  box-sizing: border-box;
   width: 335px;
   height: 407px;
   padding: 40px 20px;

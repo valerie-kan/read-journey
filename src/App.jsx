@@ -4,7 +4,7 @@ import { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getCurrentUser, refreshUser } from "./redux/auth/operations";
-import { selectIsRefreshing } from "./redux/auth/selectors";
+import { selectIsRefreshing, selectToken } from "./redux/auth/selectors";
 
 import { ErrorToast } from "./utils/errorToast";
 
@@ -22,8 +22,11 @@ import ReadingPage from "./pages/ReadingPage/ReadingPage";
 function App() {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
+  const token = useSelector(selectToken);
 
   useEffect(() => {
+    if (!token) return;
+
     const restoreSession = async () => {
       try {
         const result = await dispatch(refreshUser()).unwrap();
@@ -36,7 +39,7 @@ function App() {
     };
 
     restoreSession();
-  }, [dispatch]);
+  }, [dispatch, token]);
 
   if (isRefreshing) return <Loader />;
 

@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import { startReading, stopReading } from "./operations";
 
 const initialState = {
-  currentReading: {},
+  // currentReading: {},
+  currentBook: {},
   isLoading: false,
   error: null,
 };
@@ -19,7 +20,8 @@ const readingSlice = createSlice({
       })
       .addCase(startReading.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.currentReading = payload;
+        // state.currentReading = payload;
+        state.currentBook = payload;
       })
       .addCase(startReading.rejected, (state, { payload }) => {
         state.isLoading = false;
@@ -31,7 +33,8 @@ const readingSlice = createSlice({
       })
       .addCase(stopReading.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.currentReading = payload;
+        // state.currentReading = payload;
+        state.currentBook = payload;
       })
       .addCase(stopReading.rejected, (state, { payload }) => {
         state.isLoading = false;

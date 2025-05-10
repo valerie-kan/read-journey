@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { addBook, addBookFromRecom, deleteBook, sortBooks } from "./operations";
+import {
+  addBook,
+  addBookFromRecom,
+  deleteBook,
+  getMyBooks,
+} from "./operations";
 
 const initialState = {
   library: [],
@@ -12,6 +17,9 @@ const initialState = {
 const librarySlice = createSlice({
   name: "library",
   initialState,
+  reducers: {
+    clearLibrary: () => initialState,
+  },
   extraReducers: (builder) => {
     builder
       .addCase(addBook.pending, (state) => {
@@ -39,15 +47,18 @@ const librarySlice = createSlice({
         state.isLoading = false;
         state.error = action.payload;
       })
-      .addCase(sortBooks.pending, (state) => {
+      .addCase(getMyBooks.pending, (state) => {
         state.isLoading = true;
         state.error = null;
       })
-      .addCase(sortBooks.fulfilled, (state, action) => {
+      .addCase(getMyBooks.fulfilled, (state, action) => {
         state.isLoading = false;
         state.filteredBooks = action.payload;
+        if (action.meta.arg === "all") {
+          state.library = action.payload;
+        }
       })
-      .addCase(sortBooks.rejected, (state, action) => {
+      .addCase(getMyBooks.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       })
@@ -69,3 +80,5 @@ const librarySlice = createSlice({
 });
 
 export default librarySlice.reducer;
+
+export const { clearLibrary } = librarySlice.actions;

@@ -24,7 +24,7 @@
 
 .formTitle {
   font-weight: 500;
-  font-size: 32px;
+  font-size: 30px;
   line-height: 100%;
   letter-spacing: 0.02em;
   margin-bottom: 20px;
@@ -91,7 +91,7 @@
 .imgWrapper {
   background-color: var(--color-bg);
   border-radius: 30px;
-  max-width: 295px;
+  max-width: 335px;
   padding: 20px 40px 0;
   overflow: hidden;
 }
@@ -116,7 +116,8 @@
   .formWrapper {
     padding-block: 40px;
     padding-inline: 64px 168px;
-    max-width: 472px;
+    max-width: none;
+    width: 704px;
     height: 960px;
   }
 
@@ -127,7 +128,7 @@
   }
 
   .formTitle {
-    font-size: 64px;
+    font-size: 62px;
     line-height: 94%;
     margin-bottom: 40px;
   }

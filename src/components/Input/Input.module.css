@@ -1,6 +1,5 @@
 .input {
   border-radius: 12px;
-  box-sizing: border-box;
   padding: 14px;
   width: 100%;
   background-color: var(--color-input);
@@ -57,14 +56,14 @@
 
 .errMessage {
   font-size: 9px;
-  color: #e90516;
+  color: var(--color-red);
   margin-top: 1px;
   margin-left: 8px;
 }
 
 .errInput,
 .errInput:hover {
-  border-color: #e90516;
+  border-color: var(--color-red);
 }
 
 .errIcon {
@@ -77,14 +76,14 @@
 
 .sucMessage {
   font-size: 9px;
-  color: #30b94d;
+  color: var(--color-green);
   margin-top: 1px;
   margin-left: 8px;
 }
 
 .sucInput,
 .sucInput:hover {
-  border-color: #30b94d;
+  border-color: var(--color-green);
 }
 
 @media screen and (min-width: 768px) {
