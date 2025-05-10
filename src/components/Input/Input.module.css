@@ -42,7 +42,7 @@
   padding-left: 125px;
 }
 
-.startPageInput {
+.pageInput {
   padding-left: 100px;
 }
 
@@ -118,7 +118,7 @@
     width: 295px;
   }
 
-  .startPageInput {
+  .pageInput {
     padding-left: 114px;
     width: 295px;
   }
@@ -144,7 +144,8 @@
 @media screen and (min-width: 1440px) {
   .titleInput,
   .authorInput,
-  .totalPagesInput {
+  .totalPagesInput,
+  .pageInput {
     width: 100%;
   }
 }

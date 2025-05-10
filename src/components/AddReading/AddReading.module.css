@@ -1,4 +1,4 @@
-.startTtl {
+.readingTtl {
   font-size: 10px;
   line-height: 120%;
   margin-left: 14px;
@@ -18,7 +18,7 @@
   cursor: auto;
 }
 
-.startBtn {
+.readingBtn {
   padding: 10px 20px;
   font-size: 14px;
   line-height: 129%;
@@ -26,7 +26,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .startTtl {
+  .readingTtl {
     font-size: 14px;
     line-height: 129%;
   }
@@ -37,7 +37,7 @@
     top: 17px;
   }
 
-  .submitBtn {
+  .readingBtn {
     padding: 12px 28px;
     font-size: 16px;
     line-height: 112%;

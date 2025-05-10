@@ -30,5 +30,5 @@ export const AddBookSchema = Yup.object({
 });
 
 export const AddReadingSchema = Yup.object({
-  startPage: Yup.number().required("Please enter the start page"),
+  page: Yup.number().required("Please enter a page"),
 });
