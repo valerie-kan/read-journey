@@ -57,7 +57,6 @@
   line-height: 129%;
   margin-bottom: 5px;
   text-align: center;
-  width: 340px;
 }
 
 .bookAuthor {
@@ -101,6 +100,7 @@
     font-size: 20px;
     line-height: 100%;
     margin-bottom: 4px;
+    width: 340px;
   }
 
   .bookAuthor {

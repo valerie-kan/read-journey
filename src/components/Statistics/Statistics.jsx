@@ -4,21 +4,12 @@ import css from "./Statistics.module.css";
 
 import ProgressBar from "../ProgressBar/ProgressBar";
 
-const Statistics = ({ bookId }) => {
+const Statistics = ({ bookId, getProgress }) => {
   const [percentRead, setPercentRead] = useState(0);
   const [pagesRead, setPagesRead] = useState(0);
 
-  const getSavedProgress = (id) => {
-    try {
-      const savedInfo = localStorage.getItem(`readingProgress_${id}`);
-      return savedInfo ? JSON.parse(savedInfo) : null;
-    } catch {
-      return null;
-    }
-  };
-
   useEffect(() => {
-    const data = getSavedProgress(bookId);
+    const data = getProgress(bookId);
     if (data) {
       const { totalPages, progress } = data;
       const pagesRead = progress.reduce(
@@ -36,7 +27,7 @@ const Statistics = ({ bookId }) => {
       setPagesRead(0);
       setPercentRead(0);
     }
-  }, [bookId]);
+  }, [bookId, getProgress]);
 
   return (
     <>

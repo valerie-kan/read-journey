@@ -11,16 +11,25 @@ import Statistics from "../Statistics/Statistics";
 const Details = ({ bookId }) => {
   const [active, setActive] = useState("hourglass");
 
+  const getSavedProgress = (id) => {
+    try {
+      const savedInfo = localStorage.getItem(`readingProgress_${id}`);
+      return savedInfo ? JSON.parse(savedInfo) : null;
+    } catch {
+      return null;
+    }
+  };
+
   const icons = [
     {
       id: "hourglass",
       title: "Dairy",
-      component: <Dairy />,
+      component: <Dairy bookId={bookId} getProgress={getSavedProgress} />,
     },
     {
       id: "pie-chart",
       title: "Statistics",
-      component: <Statistics bookId={bookId} />,
+      component: <Statistics bookId={bookId} getProgress={getSavedProgress} />,
     },
   ];
 

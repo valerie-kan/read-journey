@@ -28,8 +28,6 @@ const Library = () => {
 
   const [selectedStatus, setSelectedStatus] = useState("all");
 
-  // console.log(myBooks);
-
   useEffect(() => {
     dispatch(getMyBooks(selectedStatus));
     setIsFiltered(selectedStatus !== "all");
@@ -51,16 +49,6 @@ const Library = () => {
 
   const filterBooks = async (status) => {
     setSelectedStatus(status);
-    // if (status !== "all") {
-    //   setIsFiltered(true);
-    //   try {
-    //     await dispatch(getMyBooks(status)).unwrap();
-    //   } catch (error) {
-    //     ErrorToast(error.message);
-    //   }
-    // } else {
-    //   setIsFiltered(false);
-    // }
   };
 
   return (
@@ -79,7 +67,7 @@ const Library = () => {
                 className={css.iconWrapper}
                 onClick={() => handleDeleteClick(book._id)}
               >
-                <svg width={14} height={14}>
+                <svg className={css.binIcon} width={14} height={14}>
                   <use href={`${sprite}#icon-trash`} />
                 </svg>
               </div>
