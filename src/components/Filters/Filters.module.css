@@ -7,6 +7,7 @@
 
 .inputBox {
   position: relative;
+  width: 100%;
 }
 
 .bookLabel,
@@ -39,6 +40,10 @@
     line-height: 129%;
   }
 
+  .inputBox {
+    width: 295px;
+  }
+
   .bookLabel,
   .authorLabel,
   .pagesLabel {
@@ -57,5 +62,11 @@
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .addBookBtn {
     margin-top: 18px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .inputBox {
+    width: 100%;
   }
 }

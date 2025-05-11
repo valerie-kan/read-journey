@@ -30,11 +30,11 @@ const ReadingPage = () => {
     <div className={css.pageWrapper}>
       <Dashboard>
         <AddReading
-          bookId={bookId}
+          book={selectedBook}
           isReading={isReading}
           setIsReading={setIsReading}
         />
-        {saved ? <Details bookId={bookId} /> : <Progress />}
+        {saved || isReading ? <Details bookId={bookId} /> : <Progress />}
       </Dashboard>
       <MyBook book={selectedBook} isReading={isReading} savedBook={saved} />
     </div>

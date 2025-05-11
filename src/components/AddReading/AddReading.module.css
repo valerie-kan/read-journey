@@ -7,6 +7,7 @@
 
 .inputBox {
   position: relative;
+  width: 100%;
 }
 
 .label {
@@ -26,6 +27,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .inputBox {
+    width: 295px;
+  }
+
   .readingTtl {
     font-size: 14px;
     line-height: 129%;
@@ -41,5 +46,11 @@
     padding: 12px 28px;
     font-size: 16px;
     line-height: 112%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .inputBox {
+    width: 100%;
   }
 }

@@ -1,7 +1,7 @@
 .input {
   border-radius: 12px;
   padding: 14px;
-  width: 100%;
+  width: inherit;
   background-color: var(--color-input);
   padding-left: 49px;
   font-size: 12px;
@@ -104,22 +104,22 @@
 
   .titleInput {
     padding-left: 86px;
-    width: 295px;
+    /* width: 295px; */
   }
 
   .authorInput {
     padding-left: 95px;
-    width: 295px;
+    /* width: 295px; */
   }
 
   .totalPagesInput {
     padding-left: 140px;
-    width: 295px;
+    /* width: 295px; */
   }
 
   .pageInput {
     padding-left: 114px;
-    width: 295px;
+    /* width: inherit; */
   }
 
   .iconEye {
@@ -140,11 +140,11 @@
   }
 }
 
-@media screen and (min-width: 1440px) {
+/* @media screen and (min-width: 1440px) {
   .titleInput,
   .authorInput,
   .totalPagesInput,
   .pageInput {
     width: 100%;
   }
-}
+} */

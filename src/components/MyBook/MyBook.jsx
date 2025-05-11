@@ -7,8 +7,6 @@ import sprite from "../../assets/icons/symbol-defs.svg";
 const MyBook = ({ book, isReading, savedBook }) => {
   const isBookCover = Boolean(book.imageUrl);
 
-  // console.log(savedBook);
-
   const timeLeftToFinish = () => {
     if (savedBook) {
       const startedBook = JSON.parse(savedBook);
