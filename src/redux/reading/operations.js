@@ -8,17 +8,6 @@ export const startReading = createAsyncThunk(
     try {
       const { data } = await api.post("/books/reading/start", bookData);
 
-      // const currentReading = data.progress[data.progress.length - 1];
-
-      // return currentReading;
-      // localStorage.setItem(
-      //   `readingProgress_${bookData.id}`,
-      //   JSON.stringify({
-      //     totalPages: data.totalPages,
-      //     progress: data.progress,
-      //   })
-      // );
-      console.log("start:", data);
       return data;
     } catch (error) {
       throw thunkAPI.rejectWithValue(error.response?.data || error.message);
@@ -32,8 +21,6 @@ export const stopReading = createAsyncThunk(
     try {
       const { data } = await api.post("/books/reading/finish", bookData);
 
-      // const currentReading = data.progress[data.progress.length - 1];
-      // return currentReading;
       localStorage.setItem(
         `readingProgress_${bookData.id}`,
         JSON.stringify({
@@ -42,7 +29,6 @@ export const stopReading = createAsyncThunk(
           leftToRead: data.timeLeftToRead,
         })
       );
-      console.log("stop:", data);
       return data;
     } catch (error) {
       throw thunkAPI.rejectWithValue(error.response?.data || error.message);

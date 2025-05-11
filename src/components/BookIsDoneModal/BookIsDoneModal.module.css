@@ -1,0 +1,90 @@
+.modal {
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-bg);
+  border: 1px solid rgba(104, 104, 104, 0.2);
+  border-radius: 12px;
+  padding: 60px 46px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.closeIcon {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 16px;
+  right: 12px;
+  cursor: pointer;
+  transition: color 250ms;
+}
+
+.closeIcon:hover {
+  color: var(--color-gray);
+}
+
+.booksImg {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+  content: var(--books-mobile);
+}
+
+@media screen and (min-resolution: 192dpi) {
+  .booksImg {
+    content: var(--books-mobile-2);
+  }
+}
+
+.modalTtl {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+.modalText {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: var(--color-gray);
+  text-align: center;
+}
+
+.modalSpan {
+  color: var(--color-white);
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    padding: 50px;
+    gap: 14px;
+    width: 342px;
+  }
+
+  .closeIcon {
+    right: 16px;
+  }
+
+  .booksImg {
+    width: 68px;
+    height: 70px;
+    margin-bottom: 18px;
+    content: var(--books-desktop);
+  }
+
+  .modalTtl {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
+  .booksImg {
+    content: var(--books-desktop-2);
+  }
+}

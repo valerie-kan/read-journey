@@ -11,6 +11,7 @@ import { ErrorToast } from "../../utils/errorToast";
 import { startReading, stopReading } from "../../redux/reading/operations";
 
 import Input from "../Input/Input";
+import BookIsDoneModal from "../BookIsDoneModal/BookIsDoneModal";
 
 const AddReading = ({ book, isReading, setIsReading }) => {
   const {
@@ -21,10 +22,9 @@ const AddReading = ({ book, isReading, setIsReading }) => {
   } = useForm({ resolver: yupResolver(AddReadingSchema) });
 
   const dispatch = useDispatch();
-  const [isBookDone, setIsBookDone] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const onSubmit = async (data) => {
-    // console.log("data:", data);
     try {
       if (book.totalPages < data.page) {
         throw new Error("The number exceeds book's total pages");
@@ -40,7 +40,7 @@ const AddReading = ({ book, isReading, setIsReading }) => {
         setIsReading(false);
 
         if (book.totalPages === data.page) {
-          setIsBookDone(true);
+          setIsModalOpen(true);
         }
       }
       reset();
@@ -71,7 +71,12 @@ const AddReading = ({ book, isReading, setIsReading }) => {
           {isReading ? "To stop" : "To start"}
         </button>
       </form>
-      {isBookDone && <DoneModal />}
+      {isModalOpen && (
+        <BookIsDoneModal
+          isModalOpen={isModalOpen}
+          onCloseClick={() => setIsModalOpen(false)}
+        />
+      )}
     </>
   );
 };

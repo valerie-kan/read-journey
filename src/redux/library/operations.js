@@ -18,7 +18,6 @@ export const addBookFromRecom = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const { data } = await api.post(`books/add/${id}`);
-      console.log(data);
       return data;
     } catch (error) {
       throw thunkAPI.rejectWithValue(error.response?.data || error.message);
@@ -33,7 +32,6 @@ export const deleteBook = createAsyncThunk(
       await api.delete(`books/remove/${id}`);
       return id;
     } catch (error) {
-      console.log(error);
       throw thunkAPI.rejectWithValue(error.response?.data || error.message);
     }
   }
@@ -55,7 +53,6 @@ export const getMyBooks = createAsyncThunk(
         return allBooks;
       } else {
         const { data } = await api.get(`/books/own?status=${status}`);
-        console.log(data);
         return data;
       }
     } catch (error) {
