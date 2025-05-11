@@ -53,9 +53,10 @@ const librarySlice = createSlice({
       })
       .addCase(getMyBooks.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.filteredBooks = action.payload;
         if (action.meta.arg === "all") {
           state.library = action.payload;
+        } else {
+          state.filteredBooks = action.payload;
         }
       })
       .addCase(getMyBooks.rejected, (state, action) => {

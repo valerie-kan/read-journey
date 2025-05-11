@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import css from "./Library.module.css";
 
@@ -26,16 +26,18 @@ const Library = () => {
   const filteredBooks = useSelector(selectFiltered);
   const isLoading = useSelector(selectIsLoading);
 
-  console.log(myBooks);
+  const [selectedStatus, setSelectedStatus] = useState("all");
+
+  // console.log(myBooks);
+
+  useEffect(() => {
+    dispatch(getMyBooks(selectedStatus));
+    setIsFiltered(selectedStatus !== "all");
+  }, [dispatch, selectedStatus]);
 
   const [isFiltered, setIsFiltered] = useState(false);
-  let books = myBooks;
 
-  if (isFiltered) {
-    books = filteredBooks;
-  } else {
-    books = myBooks;
-  }
+  let books = isFiltered ? filteredBooks : myBooks;
 
   const handleDeleteClick = async (id) => {
     try {
@@ -47,23 +49,24 @@ const Library = () => {
   };
 
   const filterBooks = async (status) => {
-    if (status !== "all") {
-      setIsFiltered(true);
-      try {
-        await dispatch(getMyBooks(status)).unwrap();
-      } catch (error) {
-        ErrorToast(error.message);
-      }
-    } else {
-      setIsFiltered(false);
-    }
+    setSelectedStatus(status);
+    // if (status !== "all") {
+    //   setIsFiltered(true);
+    //   try {
+    //     await dispatch(getMyBooks(status)).unwrap();
+    //   } catch (error) {
+    //     ErrorToast(error.message);
+    //   }
+    // } else {
+    //   setIsFiltered(false);
+    // }
   };
 
   return (
     <div className={css.libWrapper}>
       <div className={css.titleWrapper}>
         <h2 className={css.libTtl}>My library</h2>
-        <Select filterBooks={filterBooks} />
+        <Select filterBooks={filterBooks} selectedStatus={selectedStatus} />
       </div>
       {isLoading ? (
         <Loader />

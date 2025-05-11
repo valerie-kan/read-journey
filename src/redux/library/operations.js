@@ -45,17 +45,19 @@ export const getMyBooks = createAsyncThunk(
     try {
       if (status === "all") {
         const statuses = ["unread", "in-progress", "done"];
-        const requests = statuses.map((status) =>
-          api.get(`/books/own?status=${status}`)
-        );
-        const allResponses = await Promise.all(requests);
-        const allBooks = allResponses.flatMap((res) => res.data);
-        return allBooks;
-      }
+        const allBooks = [];
 
-      const { data } = await api.get(`/books/own?status=${status}`);
-      console.log(data);
-      return data;
+        for (const status of statuses) {
+          const { data } = await api.get(`/books/own?status=${status}`);
+          allBooks.push(...data);
+        }
+
+        return allBooks;
+      } else {
+        const { data } = await api.get(`/books/own?status=${status}`);
+        console.log(data);
+        return data;
+      }
     } catch (error) {
       throw thunkAPI.rejectWithValue(error.response?.data || error.message);
     }

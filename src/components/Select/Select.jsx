@@ -12,12 +12,13 @@ const itemsList = [
   { id: "all", label: "All books" },
 ];
 
-const Select = ({ filterBooks }) => {
-  const [selectedItem, setSelectedItem] = useState("All books");
+const Select = ({ filterBooks, selectedStatus }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const onItemClick = (status, label) => {
-    setSelectedItem(label);
+  const selectedItem = itemsList.find((item) => item.id === selectedStatus);
+  const currentLabel = selectedItem?.label || "All Books";
+
+  const onItemClick = (status) => {
     setIsOpen(false);
     filterBooks(status);
   };
@@ -28,7 +29,7 @@ const Select = ({ filterBooks }) => {
         className={css.firstRowWrapper}
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        {selectedItem}
+        {currentLabel}
         <svg className={css.arrowIcon}>
           <use href={`${sprite}#icon-arrow-${isOpen ? "up" : "down"}`} />
         </svg>
@@ -39,10 +40,10 @@ const Select = ({ filterBooks }) => {
             <li
               className={clsx(
                 css.selectItem,
-                selectedItem === label && css.selected
+                selectedStatus === id && css.selected
               )}
               key={id}
-              onClick={() => onItemClick(id, label)}
+              onClick={() => onItemClick(id)}
             >
               {label}
             </li>
