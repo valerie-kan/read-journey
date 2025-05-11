@@ -82,7 +82,7 @@
 
 @media screen and (min-width: 768px) {
   .sectionWrapper {
-    width: 273px;
+    width: 313px;
     padding-block: 26px;
   }
 
@@ -100,5 +100,6 @@
   .sectionWrapper {
     padding-block: 20px;
     margin-top: 47px;
+    width: 100%;
   }
 }
