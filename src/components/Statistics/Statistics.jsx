@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import css from "./Statistics.module.css";
 
 import ProgressBar from "../ProgressBar/ProgressBar";
-import { ErrorToast } from "../../utils/errorToast";
+// import { ErrorToast } from "../../utils/errorToast";
 
 const Statistics = ({ bookId }) => {
   const [percentRead, setPercentRead] = useState(0);
@@ -20,7 +20,7 @@ const Statistics = ({ bookId }) => {
 
   useEffect(() => {
     const data = getSavedProgress(bookId);
-    if (data) {
+    if (data.length > 0) {
       const { totalPages, progress } = data;
       const pagesRead = progress.reduce(
         (acc, item) => acc + (item.finishPage - item.startPage),

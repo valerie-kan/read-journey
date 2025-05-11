@@ -1,12 +1,12 @@
 .dashboard {
   background-color: var(--color-bg);
   border-radius: 30px;
-  width: 100%;
   max-width: 335px;
+  width: 100%;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
 }
 
 @media screen and (min-width: 768px) {
@@ -24,6 +24,6 @@
     width: 353px;
     padding: 40px 20px 20px;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
   }
 }
