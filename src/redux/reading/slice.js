@@ -35,6 +35,7 @@ const readingSlice = createSlice({
         state.isLoading = false;
         // state.currentReading = payload;
         state.currentBook = payload;
+        console.log(state.currentBook);
       })
       .addCase(stopReading.rejected, (state, { payload }) => {
         state.isLoading = false;

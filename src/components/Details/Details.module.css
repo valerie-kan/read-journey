@@ -1,5 +1,6 @@
 .detailsWrapper {
   position: relative;
+  margin-top: 20px;
 }
 
 .detailsTtl {
@@ -22,6 +23,7 @@
   width: 20px;
   height: 20px;
   color: var(--color-gray);
+  cursor: pointer;
 }
 
 .active {
@@ -31,6 +33,7 @@
 @media screen and (min-width: 768px) {
   .detailsWrapper {
     width: 321px;
+    margin-top: 0;
   }
 
   .detailsTtl {
@@ -40,11 +43,12 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .detailsTtl {
-    margin-bottom: 20px;
-  }
-
   .detailsWrapper {
     width: 313px;
+    margin-top: 20px;
+  }
+
+  .detailsTtl {
+    margin-bottom: 20px;
   }
 }

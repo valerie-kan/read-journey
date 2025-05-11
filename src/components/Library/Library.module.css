@@ -2,7 +2,6 @@
   border-radius: 30px;
   background-color: var(--color-bg);
   max-width: 335px;
-  width: 100%;
   height: 407px;
   padding: 40px 20px;
 }
@@ -15,7 +14,6 @@
 .libTtl {
   font-size: 20px;
   line-height: 100%;
-  /* margin-bottom: 34px; */
 }
 
 .booksWrapper {
@@ -42,6 +40,7 @@
 @media screen and (min-width: 768px) {
   .libWrapper {
     padding: 40px;
+    max-width: none;
     width: 100%;
     height: 651px;
   }
@@ -55,7 +54,6 @@
   .recomTtl {
     font-size: 28px;
     line-height: 114%;
-    /* margin-bottom: 28px; */
   }
 
   .booksWrapper {

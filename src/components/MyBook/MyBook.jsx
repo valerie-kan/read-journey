@@ -3,18 +3,27 @@ import clsx from "clsx";
 import css from "./MyBook.module.css";
 
 import sprite from "../../assets/icons/symbol-defs.svg";
-import { useEffect } from "react";
 
-const MyBook = ({ book, isReading }) => {
+const MyBook = ({ book, isReading, savedBook }) => {
   const isBookCover = Boolean(book.imageUrl);
 
-  useEffect(() => {
-    localStorage.getItem(``);
-  }, []);
+  // console.log(savedBook);
+
+  const timeLeftToFinish = () => {
+    if (savedBook) {
+      const startedBook = JSON.parse(savedBook);
+      return `${startedBook.leftToRead.hours} hours and ${startedBook.leftToRead.minutes} minutes left`;
+    } else {
+      return "";
+    }
+  };
 
   return (
     <div className={css.readingWrapper}>
-      <h2 className={css.readingTtl}>My reading</h2>
+      <h2 className={css.readingTtl}>
+        My reading
+        <span className={css.timeLeft}>{timeLeftToFinish()}</span>
+      </h2>
       <div className={css.bookWrapper}>
         <div className={css.imgWrapper}>
           <img

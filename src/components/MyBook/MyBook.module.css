@@ -8,6 +8,17 @@
   font-size: 20px;
   line-height: 100%;
   margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timeLeft {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  color: var(--color-gray);
 }
 
 .bookWrapper {
@@ -69,6 +80,11 @@
     font-size: 28px;
     line-height: 114%;
     margin-bottom: 32px;
+  }
+
+  .timeLeft {
+    font-size: 14px;
+    line-height: 129%;
   }
 
   .bookWrapper {

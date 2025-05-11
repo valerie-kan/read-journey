@@ -11,13 +11,13 @@ export const startReading = createAsyncThunk(
       // const currentReading = data.progress[data.progress.length - 1];
 
       // return currentReading;
-      localStorage.setItem(
-        `readingProgress_${bookData.id}`,
-        JSON.stringify({
-          totalPages: data.totalPages,
-          progress: data.progress,
-        })
-      );
+      // localStorage.setItem(
+      //   `readingProgress_${bookData.id}`,
+      //   JSON.stringify({
+      //     totalPages: data.totalPages,
+      //     progress: data.progress,
+      //   })
+      // );
       console.log("start:", data);
       return data;
     } catch (error) {
@@ -39,6 +39,7 @@ export const stopReading = createAsyncThunk(
         JSON.stringify({
           totalPages: data.totalPages,
           progress: data.progress,
+          leftToRead: data.timeLeftToRead,
         })
       );
       console.log("stop:", data);

@@ -24,6 +24,8 @@ const ReadingPage = () => {
     }
   }, [bookId]);
 
+  const saved = localStorage.getItem(`readingProgress_${bookId}`) || null;
+
   return (
     <div className={css.pageWrapper}>
       <Dashboard>
@@ -32,10 +34,9 @@ const ReadingPage = () => {
           isReading={isReading}
           setIsReading={setIsReading}
         />
-        {/* <Progress /> */}
-        <Details bookId={bookId} />
+        {saved ? <Details bookId={bookId} /> : <Progress />}
       </Dashboard>
-      <MyBook book={selectedBook} isReading={isReading} />
+      <MyBook book={selectedBook} isReading={isReading} savedBook={saved} />
     </div>
   );
 };

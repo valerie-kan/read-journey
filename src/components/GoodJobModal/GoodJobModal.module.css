@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  width: 241px;
+  max-width: 335px;
 }
 
 .closeIcon {
@@ -64,7 +64,6 @@
 
 @media screen and (min-width: 768px) {
   .modalWrapper {
-    width: 242px;
     padding: 50px;
     gap: 32px;
   }

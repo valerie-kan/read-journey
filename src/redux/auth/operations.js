@@ -17,7 +17,7 @@ export const registerUser = createAsyncThunk(
     try {
       const { data } = await api.post("users/signup", formData);
       setToken(data.token);
-      console.log(data);
+      // console.log(data);
       localStorage.setItem("refreshToken", data.refreshToken);
       return data;
     } catch (error) {
@@ -33,7 +33,7 @@ export const login = createAsyncThunk(
       const { data } = await api.post("users/signin", formData);
       setToken(data.token);
       localStorage.setItem("refreshToken", data.refreshToken);
-      console.log(data);
+      // console.log(data);
       return data;
     } catch (error) {
       return thunkApi.rejectWithValue(error.response?.data || error.message);
