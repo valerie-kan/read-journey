@@ -34,7 +34,7 @@ const ReadingPage = () => {
           isReading={isReading}
           setIsReading={setIsReading}
         />
-        {saved || isReading ? <Details bookId={bookId} /> : <Progress />}
+        {saved ? <Details bookId={bookId} /> : <Progress />}
       </Dashboard>
       <MyBook book={selectedBook} isReading={isReading} savedBook={saved} />
     </div>
