@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 import { Toaster } from "react-hot-toast";
-import { Suspense, useEffect } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { getCurrentUser, refreshUser, setToken } from "./redux/auth/operations";
@@ -13,11 +13,13 @@ import PrivateRoute from "./components/PrivateRoute";
 import MainLayout from "./components/MainLayout";
 import Loader from "./components/Loader";
 
-import LoginPage from "./pages/LoginPage/LoginPage";
-import RegisterPage from "./pages/RegisterPage/RegisterPage";
-import RecommendedPage from "./pages/RecommendedPage/RecommendedPage";
-import LibraryPage from "./pages/LIbraryPage/LIbraryPage";
-import ReadingPage from "./pages/ReadingPage/ReadingPage";
+const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage"));
+const RegisterPage = lazy(() => import("./pages/RegisterPage/RegisterPage"));
+const RecommendedPage = lazy(() =>
+  import("./pages/RecommendedPage/RecommendedPage")
+);
+const LibraryPage = lazy(() => import("./pages/LibraryPage/LibraryPage"));
+const ReadingPage = lazy(() => import("./pages/ReadingPage/ReadingPage"));
 
 function App() {
   const dispatch = useDispatch();
