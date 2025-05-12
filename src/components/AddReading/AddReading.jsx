@@ -35,8 +35,22 @@ const AddReading = ({ book, isReading, setIsReading }) => {
         localStorage.setItem(`isReading_${book._id}`, "true");
         setIsReading(true);
       } else {
-        await dispatch(stopReading({ id: book._id, ...data })).unwrap();
+        const updatedData = await dispatch(
+          stopReading({ id: book._id, ...data })
+        ).unwrap();
         localStorage.setItem(`isReading_${book._id}`, "false");
+
+        const updatedProgress = {
+          leftToRead: updatedData.timeLeftToRead,
+          progress: updatedData.progress,
+          totalPages: updatedData.totalPages,
+        };
+
+        localStorage.setItem(
+          `readingProgress_${book._id}`,
+          JSON.stringify(updatedProgress)
+        );
+
         setIsReading(false);
 
         if (book.totalPages === data.page) {
