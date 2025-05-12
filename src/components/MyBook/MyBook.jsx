@@ -8,7 +8,7 @@ const MyBook = ({ book, isReading, savedBook }) => {
   const isBookCover = Boolean(book.imageUrl);
 
   const timeLeftToFinish = () => {
-    if (savedBook) {
+    if (savedBook && savedBook.progress) {
       const startedBook = JSON.parse(savedBook);
       return `${startedBook.leftToRead.hours} hours and ${startedBook.leftToRead.minutes} minutes left`;
     } else {

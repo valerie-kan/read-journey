@@ -2,7 +2,7 @@ import css from "./DairyListItem.module.css";
 
 import sprite from "../../assets/icons/symbol-defs.svg";
 
-const DairyListItem = ({ item, totalPages /*, handleDeleteReading */ }) => {
+const DairyListItem = ({ item, totalPages, handleDeleteReading }) => {
   const readPages = item.finishPage - item.startPage;
   const percentage = ((item.finishPage / totalPages) * 100).toFixed(1);
 
@@ -40,7 +40,7 @@ const DairyListItem = ({ item, totalPages /*, handleDeleteReading */ }) => {
             className={css.binIcon}
             width={14}
             height={14}
-            // onClick={() => handleDeleteReading(item._id)}
+            onClick={() => handleDeleteReading(item._id)}
           >
             <use href={`${sprite}#icon-trash`} />
           </svg>

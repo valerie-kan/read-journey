@@ -3,7 +3,7 @@ import { Toaster } from "react-hot-toast";
 import { Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getCurrentUser, refreshUser } from "./redux/auth/operations";
+import { getCurrentUser, refreshUser, setToken } from "./redux/auth/operations";
 import { selectIsRefreshing, selectToken } from "./redux/auth/selectors";
 
 import { ErrorToast } from "./utils/errorToast";
@@ -27,10 +27,13 @@ function App() {
   useEffect(() => {
     if (!token) return;
 
+    setToken(token);
+
     const restoreSession = async () => {
       try {
         const result = await dispatch(refreshUser()).unwrap();
-        if (result) {
+        if (result?.token) {
+          setToken(result.token);
           await dispatch(getCurrentUser()).unwrap();
         }
       } catch (err) {
