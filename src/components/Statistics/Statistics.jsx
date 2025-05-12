@@ -12,17 +12,13 @@ const Statistics = ({ bookId, getProgress }) => {
     const data = getProgress(bookId);
     if (data) {
       const { totalPages, progress } = data;
-      const pagesRead = progress.reduce(
-        (acc, item) => acc + (item.finishPage - item.startPage),
-        0
-      );
-      const percent = Math.min(
-        ((pagesRead / totalPages) * 100).toFixed(2),
-        100
-      );
+
+      const maxPage = Math.max(...progress.map((item) => item.finishPage));
+
+      const percent = Math.min(((maxPage / totalPages) * 100).toFixed(2), 100);
 
       setPercentRead(percent);
-      setPagesRead(pagesRead);
+      setPagesRead(maxPage);
     } else {
       setPagesRead(0);
       setPercentRead(0);

@@ -21,15 +21,6 @@ export const stopReading = createAsyncThunk(
     try {
       const { data } = await api.post("/books/reading/finish", bookData);
 
-      localStorage.setItem(
-        `readingProgress_${bookData.id}`,
-        JSON.stringify({
-          totalPages: data.totalPages,
-          progress: data.progress,
-          leftToRead: data.timeLeftToRead,
-        })
-      );
-
       return data;
     } catch (error) {
       throw thunkAPI.rejectWithValue(error.response?.data || error.message);

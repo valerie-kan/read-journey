@@ -41,6 +41,7 @@ const Library = () => {
     try {
       await dispatch(deleteBook(id)).unwrap();
       localStorage.removeItem(`readingProgress_${id}`);
+      localStorage.removeItem(`isReading_${id}`);
       SuccessToast("The book was deleted");
     } catch (error) {
       ErrorToast(error.message);
