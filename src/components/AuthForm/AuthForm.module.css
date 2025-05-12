@@ -193,6 +193,7 @@
   .formWrapper {
     padding-inline: 64px;
     height: 736px;
+    width: 600px;
   }
 
   .logo {
