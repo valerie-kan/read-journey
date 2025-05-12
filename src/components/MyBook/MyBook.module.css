@@ -36,7 +36,7 @@
 
 .bookCover {
   width: 100%;
-  height: 100%;
+  height: 208px;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -96,6 +96,11 @@
     margin-bottom: 25px;
   }
 
+  .bookCover {
+    width: 100%;
+    height: 256px;
+  }
+
   .bookTtl {
     font-size: 20px;
     line-height: 100%;
@@ -121,6 +126,11 @@
 
   .imgWrapper {
     width: 224px;
+  }
+
+  .bookCover {
+    width: 100%;
+    height: 340px;
   }
 
   .bookAuthor {

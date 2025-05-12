@@ -96,4 +96,5 @@ button:hover {
 
 img {
   display: block;
+  object-fit: cover;
 }

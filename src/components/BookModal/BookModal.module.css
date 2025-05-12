@@ -30,6 +30,7 @@
 .image {
   border-radius: 8px;
   width: 140px;
+  height: 213px;
   margin-bottom: 16px;
 }
 
@@ -93,6 +94,7 @@
 
   .image {
     width: 153px;
+    height: 233px;
   }
 
   .bookTtl {
