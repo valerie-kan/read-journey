@@ -74,6 +74,7 @@ function App() {
             element={<PrivateRoute component={<ReadingPage />} />}
           />
         </Route>
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </Suspense>
   );
